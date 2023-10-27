@@ -170,13 +170,13 @@
       formControlName="teacher"
       *ngIf="!Id"
     >
-      <option *ngFor="let teacher of teachers" [value]="teacher.id">
+      <option *ngFor="let teacher of teachers" [value]="teacher.name">
         {{ teacher.name }}
       </option>
     </select>
     <div *ngIf="Id">
-      <input type="text"  formControlName="teacher"/>
-      <button routerLink="/matriculate">Change teacher</button>
+      <input type="text" formControlName="teacher"/>
+      <button routerLink="/matriculate" (click)="setId()">Change teacher</button>
     </div>
   </div>
 

@@ -7,7 +7,7 @@ import * as DISTRICTS from 'provincias.json';
 import { DataList } from 'src/app/data-list';
 import { Validadores } from 'src/app/validadores';
 import { TEACHERS } from '../teachers/mock-teachers';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -24,7 +24,7 @@ export class FormComponent {
   provincias: DataList[] = []
   ciudades: DataList[] = []
 
-  constructor(private route: Router, private formBuilder: FormBuilder) { }
+  constructor(private route: ActivatedRoute, private formBuilder: FormBuilder) { }
 
 
   form = this.formBuilder.group({
@@ -95,28 +95,25 @@ export class FormComponent {
     });
   }
   getTeacher(): void {
-    const id = this.route.getCurrentNavigation()?.extras.state
+    let id: any = this.route.snapshot.paramMap.get('id')
+    id = id?.replace('teacherId=', '')
 
-
-    console.log(id);
-
-
-
-
-
-
+    if (id != undefined) {
+      this.Id = true;
+      this.teacherId = id
+      this.form.get('teacher')?.setValue(this.teachers[this.teacherId-1].name)
+  
+    } 
+  
 
   }
   onSubmit() {
     console.log(this.form.value);
 
-
   }
-
-
-
-
-
+  setId() {
+    this.Id = false
+  }
 
 
 }
