@@ -1,0 +1,19 @@
+.marco {
+    width: 200px; /* Ancho del marco */
+    height: 175px; /* Alto del marco */
+    border: 2px solid #000; /* Borde del marco */
+    position: relative; /* Importante para posicionar el índice */
+    border-radius: 100px;
+  }
+
+  /* Estilo para el índice */
+  .indice {
+    width: 60px; /* Ancho del índice */
+
+    right: -20px;
+
+    border-radius: 30px;
+    position: absolute; /* Posicionamiento absoluto */
+    bottom: -10px; /* Posición desde arriba */
+    right: -30px; /* Posición desde la derecha (crea un hueco) */
+  }

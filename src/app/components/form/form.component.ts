@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { ActivatedRoute } from '@angular/router';
 import * as CCAA from 'ccaa.json';
 import * as CITIES from 'poblaciones.json';
 import * as DISTRICTS from 'provincias.json';
 import { DataList } from 'src/app/data-list';
 import { Validadores } from 'src/app/validadores';
+import { List } from '../../mock-students';
 import { TEACHERS } from '../teachers/mock-teachers';
-import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -23,7 +24,7 @@ export class FormComponent {
   CITIES = JSON.parse(JSON.stringify(CITIES)).default
   provincias: DataList[] = []
   ciudades: DataList[] = []
-
+  students = List
   constructor(private route: ActivatedRoute, private formBuilder: FormBuilder) { }
 
 
@@ -31,7 +32,6 @@ export class FormComponent {
 
     firstName: ['', [Validators.required, Validadores.validateNames,]],
     surName: ['', [Validators.required, Validadores.validateNames,]],
-    document: ['', [Validators.required]],
     nif: ['', [Validators.required]],
     birthDate: ['', [Validators.required]],
     phone: ['', [Validators.required]],
@@ -54,7 +54,7 @@ export class FormComponent {
 
   })
   addressFormGroup = this.form.get('address') as FormGroup;
-  placeholder = Object.keys(this.form.value)
+
   ngOnInit(): void {
     this.setDistrict()
 
@@ -101,14 +101,18 @@ export class FormComponent {
     if (id != undefined) {
       this.Id = true;
       this.teacherId = id
-      this.form.get('teacher')?.setValue(this.teachers[this.teacherId-1].name)
-  
-    } 
-  
+      this.form.get('teacher')?.setValue(this.teachers[this.teacherId - 1].name)
+
+    }
+
 
   }
   onSubmit() {
-    console.log(this.form.value);
+    let student: any = this.form.value
+
+
+    this.students.push(student)
+    console.log(this.students);
 
   }
   setId() {

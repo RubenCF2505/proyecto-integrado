@@ -1,3 +1,3 @@
 import { Student } from "./student";
 
-const List=[]
+export const List:Student []=[]

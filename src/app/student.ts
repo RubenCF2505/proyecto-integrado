@@ -1,22 +1,21 @@
 export interface Student {
     firstName: string,
-    lastName: string,
-    document: string,
-    Type: number,
+    surName: string,
+    nif: string ,
     birthDate: Date,
-    phone: string,
-    email: string,
-    teacher:string,
+    phone: string ,
+    email: string ,
+    teacher: string,
     place: {
-        AutonomousComunity: "",
-        District: "",
-        City: ""
+        AutonomousComunity: string,
+        District: string ,
+        City: string 
     }
     address: {
-        street: "",
-        number: "",
-        floor: "",
-        letter: "",
-        postalCode: ""
+        st: string ,
+        number: string,
+        floor: string ,
+        letter: string,
+        PC: string 
     }
 }
