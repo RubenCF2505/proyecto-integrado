@@ -1,0 +1,19 @@
+<div class="spacing">
+  <div *ngFor="let item of teachers" class="mx-10 border-b my-5">
+    <h2 class="text-3xl">{{ item.name }}</h2>
+    <div class="flex m-3">
+      <div class="image-container block m-2">
+        <img [src]="item.img" alt="Image 1" class=""/>
+      </div>
+      <div>
+        <p class="block">{{ item.description }}</p>
+        <p class="block">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut sit
+          labore velit eligendi facilis itaque ex est, quia ipsa inventore minus
+          at quisquam dolorum modi, illo ab harum quos totam?
+        </p>
+      </div>
+    </div>
+    <button [routerLink]="['/matriculate']" [state]="item.id.toString" class="m-4">Got it</button>
+  </div>
+</div>

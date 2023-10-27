@@ -1,0 +1,65 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.fixed-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+
+  /* To ensure the toolbar is on top of other content */
+}
+/* The progress container (grey background) */
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  background-color: #ffffff;
+}
+
+.progress {
+  height: 100%;
+  background-color: #af844c;
+  transition: width 0.3s; /* Add a smooth transition effect */
+}
+
+.text {
+  display: inline-block;
+  position: relative;
+}
+
+.text:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffc107;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.text:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.menu a {
+  padding-bottom: 5px;
+}
+.rockSalt {
+  font-family: "Rock Salt", cursive;
+}
+.progress-bar {
+  background-color: aqua;
+  width: 100%;
+  left: 0;
+  height: 5px;
+  float: left;
+}
+.progress {
+  width: 0%;
+  background-color: #fdbe6b;
+  border-radius: 0;
+  height: 100%;
+}
