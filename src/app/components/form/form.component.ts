@@ -74,7 +74,7 @@ export class FormComponent {
   }
   setCity() {
     this.form.get('place.district')!.valueChanges.subscribe(x => {
-      x != "" ? this.form.get('place.city')?.enable() :
+ this.form.get('place.city')?.enable() 
         this.ciudades = []
       this.showCities(x!)
 
