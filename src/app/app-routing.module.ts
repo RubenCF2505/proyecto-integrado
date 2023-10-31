@@ -7,13 +7,14 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: 'home', component: ContainerComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', component: ContainerComponent },
+  { path: 'home', redirectTo: '', pathMatch: 'full' },
   { path: 'teachers', component: TeachersComponent },
   { path: 'matriculate', component: FormComponent },
   { path: 'matriculate/:id', component: FormComponent },
   { path: "aboutUs",component:AboutUsComponent },
-  { path: "login",component:LoginComponent   }
+  { path: "login",component:LoginComponent   },
+
 ];
 
 @NgModule({
