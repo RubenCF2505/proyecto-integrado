@@ -4,3 +4,9 @@
   .select-selected{
     background-color: blue;
   }
+  #img{
+    width: 200px;
+    display:flex;
+    height: 200px;
+    background-repeat: no-repeat;
+  }

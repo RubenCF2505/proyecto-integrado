@@ -26,9 +26,36 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { LoginComponent } from './login/login.component';
 import { MatIconModule } from '@angular/material/icon';
 
+
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, ContainerComponent, ProgressBarComponent, TeachersComponent, FormComponent, InputComponent, AboutUsComponent, LoginComponent],
-  imports: [BrowserModule, AppRoutingModule, TabMenuModule, ProgressBarModule, ToastModule, MatSidenavModule, MatProgressBarModule, CarouselModule, ReactiveFormsModule, MatCheckboxModule, MatInputModule, BrowserAnimationsModule, MatSelectModule, MatIconModule],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    ContainerComponent,
+    ProgressBarComponent,
+    TeachersComponent,
+    FormComponent,
+    InputComponent,
+    AboutUsComponent,
+    LoginComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    TabMenuModule,
+    ProgressBarModule,
+    ToastModule,
+    MatSidenavModule,
+    MatProgressBarModule,
+    CarouselModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatSelectModule,
+    MatIconModule],
+
+
   providers: [],
   bootstrap: [AppComponent],
 })

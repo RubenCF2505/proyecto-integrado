@@ -62,6 +62,7 @@ export class FormComponent {
     this.setCity()
 
     this.getTeacher()
+    this.showImage()
   }
   setDistrict() {
     this.form.get('place.AC')!.valueChanges.subscribe(x => {
@@ -118,7 +119,17 @@ export class FormComponent {
   setId() {
     this.Id = false
   }
+  showImage() {
+    if(this.Id){
+      const img = this.teachers[this.teacherId].img
+      document.getElementById('img')!.style.backgroundImage=`url(${img})`
+    }
+    this.form.get('teacher')?.valueChanges.subscribe((x: any) => {
+      const img = this.teachers[x].img
+      document.getElementById('img')!.style.backgroundImage=`url(${img})`
+    });
 
+  }
 
 }
 
