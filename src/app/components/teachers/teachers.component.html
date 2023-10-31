@@ -1,21 +1,27 @@
-
-<div class="spacing">
-  <div *ngFor="let item of teachers" class="mx-10 border-b my-5 w-5/6">
+<div class="m-20">
+  <div *ngFor="let item of teachers; let i = index" class="mx-10 border-b my-5">
     <h2 class="text-3xl">{{ item.name }}</h2>
-    <div class="flex m-3">
-      <div class="marco mr-4">
-        <div class="indice"><img [src]="item.index" width="60px" alt="" /></div>
-        <img [src]="item.img" alt="" />
+    <div class="m-3 flex">
+      <div class="marco flex">
+        <div class="indice ">
+          <img [src]="item.index" alt="" class="-rotate-45"/>
+        </div>
+        <div class="absolute">
+          <img [src]="item.img" class="w-44" />
+        </div>
       </div>
-      <div>
-        <p class="block"><b>Description: </b>{{ item.description }}</p>
-        <p class="block"><b>Teaching Style: </b>{{ item.style }}</p>
-        <p class="block"><b>Hability: </b>{{ item.hability }}</p>
-
+      <div class="w-11/12 block">
+        <p class="mx-2"><b>Description: </b>{{ item.description }}</p>
+        <p class="mx-2"><b>Teaching Style: </b>{{ item.style }}</p>
+        <p class="mx-2"><b>Ability: </b>{{ item.abilities }}</p>
+        <p class="mx-2"><b>Teaching Classes:</b>{{ item.classes }}</p>
       </div>
     </div>
-    <button [routerLink]="['/matriculate/teacherId=' + item.id]" class="m-4">
-      Got it
+    <button
+      [routerLink]="['/matriculate/teacherId=' + item.id]"
+      class="m-4 text-blue-500 underline"
+    >
+      Choose him
     </button>
   </div>
 </div>

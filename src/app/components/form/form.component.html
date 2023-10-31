@@ -22,11 +22,7 @@
   <div class="grid gap-6 md:grid-cols-12">
     <!--NIF-->
     <div class="">
-      <app-input 
-        type="text" 
-        [form]="form" 
-        label="NIF" 
-        controlName="nif">
+      <app-input type="text" [form]="form" label="NIF" controlName="nif">
       </app-input>
     </div>
 
@@ -49,13 +45,8 @@
       ></app-input>
     </div>
     <div class="col-span-7">
-      <app-input 
-        [form]="form" 
-        type="text" 
-        label="Email" 
-        controlName="email"> 
+      <app-input [form]="form" type="text" label="Email" controlName="email">
       </app-input>
-
     </div>
   </div>
   <!--EMAIL-->
@@ -175,8 +166,19 @@
       </option>
     </select>
     <div *ngIf="Id">
-      <input type="text" formControlName="teacher"/>
-      <button routerLink="/matriculate" (click)="setId()">Change teacher</button>
+      <input
+        type="text"
+        formControlName="teacher"
+        readonly
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      />
+      <button
+        routerLink="/matriculate"
+        (click)="setId()"
+        class="bg-gray-400 my-4 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      >
+        Change teacher
+      </button>
     </div>
   </div>
 
