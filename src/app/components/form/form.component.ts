@@ -74,8 +74,10 @@ export class FormComponent {
   }
   setCity() {
     this.form.get('place.district')!.valueChanges.subscribe(x => {
- this.form.get('place.city')?.enable() 
-        this.ciudades = []
+
+
+      this.form.get('place.city')?.enable()
+      this.ciudades = []
       this.showCities(x!)
 
     })
@@ -120,13 +122,13 @@ export class FormComponent {
     this.Id = false
   }
   showImage() {
-    if(this.Id){
-      const img = this.teachers[this.teacherId].img
-      document.getElementById('img')!.style.backgroundImage=`url(${img})`
+    if (this.Id) {
+      const img = this.teachers[this.teacherId-1].img
+      document.getElementById('img')!.style.backgroundImage = `url(${img})`
     }
     this.form.get('teacher')?.valueChanges.subscribe((x: any) => {
-      const img = this.teachers[x].img
-      document.getElementById('img')!.style.backgroundImage=`url(${img})`
+      const img = this.teachers[x-1].img
+      document.getElementById('img')!.style.backgroundImage = `url(${img})`
     });
 
   }

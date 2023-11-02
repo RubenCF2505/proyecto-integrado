@@ -25,7 +25,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { LoginComponent } from './login/login.component';
 import { MatIconModule } from '@angular/material/icon';
-
+import { GalleriaModule } from 'primeng/galleria';
 
 @NgModule({
   declarations: [
@@ -53,7 +53,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    MatIconModule],
+    MatIconModule,
+    GalleriaModule,
+  ],
 
 
   providers: [],

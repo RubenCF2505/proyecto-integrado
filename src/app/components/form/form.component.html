@@ -67,6 +67,7 @@
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           id="AC"
         >
+        <option value="0">Select your Comunnity</option>
           <option *ngFor="let item of community" [value]="item.code">
             {{ item.label }}
           </option>
@@ -82,6 +83,7 @@
           formControlName="district"
           placeholder="Granada"
         >
+          <option value="0">Select your district</option>
           <option *ngFor="let item of provincias" [value]="item.code">
             {{ item.label }}
           </option>
@@ -97,6 +99,7 @@
           formControlName="city"
           placeholder="Granada"
         >
+          <option value="0">Select your city</option>
           <option *ngFor="let item of ciudades" [value]="item.code">
             {{ item.label }}
           </option>
@@ -172,7 +175,7 @@
         readonly
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
       />
-  
+
       <button
         routerLink="/matriculate"
         (click)="setId()"
@@ -181,7 +184,6 @@
         Change teacher
       </button>
     </div>
-   
   </div>
   <div class="image" id="img"></div>
   <button
@@ -190,5 +192,4 @@
   >
     Submit
   </button>
-
 </form>

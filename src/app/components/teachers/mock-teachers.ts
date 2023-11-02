@@ -8,7 +8,7 @@ export const TEACHERS: Teacher[] = [
         description: "Goku, the iconic hero of the Dragon Ball series, may not be the first character that comes to mind when thinking of teachers, but he has played a significant role as a mentor and teacher to various characters throughout the series. Goku's teaching style is rooted in his own experiences and values, making him a unique and impactful educator.",
         classes: "Goku's teaching philosophy is deeply rooted in his own continuous quest for self-improvement. He encourages his students to always strive for greatness and never settle for mediocrity. Goku's dedication to becoming stronger serves as a powerful example to his disciples.",
         index: "assets/images/bola.png",
-        img: "assets/images/logo.png",
+        img: "https://static.wikia.nocookie.net/dragonball/images/b/ba/Goku_anime_profile.png",
         style: "Goku's teaching style is characterized by his hands-on, practical approach. He often believes that the best way to learn is through experience, and he encourages his students to face challenges head-on. He prefers to lead by example, showing his students what is possible through hard work, determination, and a strong sense of justice.",
         abilities: "Goku is one of the most powerful martial artists in the Dragon Ball universe. He imparts his vast knowledge of combat techniques, such as the Kamehameha and various transformations like Super Saiyan, to his students. His combat training is intense and focused on honing their physical abilities.s"
     },
@@ -18,7 +18,7 @@ export const TEACHERS: Teacher[] = [
         description: 'Vegeta, a character in the Dragon Ball series, is not traditionally portrayed as a teacher or mentor; however, in certain moments and contexts, he does take on the role of imparting knowledge and skills to others.',
         classes: "Vegeta's training sessions are incredibly intense. He pushes his students to surpass their limits through grueling workouts and battles. His high expectations and competitive spirit often serve as a source of motivation for his students to excel.",
         index: "assets/images/bola.png",
-        img: "assets/images/logo.png",
+        img: "assets/images/vegeta.png",
         style: "Vegeta's teaching style is characterized by his strict, disciplined, and no-nonsense approach. He has a strong belief in pushing his students to their limits, demanding constant improvement and perfection in their techniques. He's a tough and demanding mentor.",
         abilities: "Vegeta is one of the most powerful Saiyans and martial artists in the Dragon Ball universe. He imparts his knowledge of combat techniques, strategies, and Saiyan transformations to his students. His training focuses on developing raw power, endurance, and combat instincts."
     },

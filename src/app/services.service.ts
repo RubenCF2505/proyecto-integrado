@@ -13,11 +13,13 @@ export class ServicesService {
 
   getTeacherById(id: number):Observable<string> {
     const url=`/matriculate/${id}`;
-    return this.http.get<string>(url).pipe(
-      tap((_)=>console.log(id))
-      )
+    return this.http.get<string>(url)
   }
    getTeachers(){
      return TEACHERS
   }
+  getImages(){
+    return 
+  }
+  
 }
