@@ -8,7 +8,7 @@ export const TEACHERS: Teacher[] = [
         description: "Goku, the iconic hero of the Dragon Ball series, may not be the first character that comes to mind when thinking of teachers, but he has played a significant role as a mentor and teacher to various characters throughout the series. Goku's teaching style is rooted in his own experiences and values, making him a unique and impactful educator.",
         classes: "Goku's teaching philosophy is deeply rooted in his own continuous quest for self-improvement. He encourages his students to always strive for greatness and never settle for mediocrity. Goku's dedication to becoming stronger serves as a powerful example to his disciples.",
         index: "assets/images/bola.png",
-        img: "https://static.wikia.nocookie.net/dragonball/images/b/ba/Goku_anime_profile.png",
+        img: "assets/images/goku.png",
         style: "Goku's teaching style is characterized by his hands-on, practical approach. He often believes that the best way to learn is through experience, and he encourages his students to face challenges head-on. He prefers to lead by example, showing his students what is possible through hard work, determination, and a strong sense of justice.",
         abilities: "Goku is one of the most powerful martial artists in the Dragon Ball universe. He imparts his vast knowledge of combat techniques, such as the Kamehameha and various transformations like Super Saiyan, to his students. His combat training is intense and focused on honing their physical abilities.s"
     },
@@ -28,7 +28,7 @@ export const TEACHERS: Teacher[] = [
         description: 'Master Roshi, a beloved character in the Dragon Ball series, assumes the role of a teacher and mentor to several prominent characters, including Goku and Krillin. Despite his eccentricities and occasional perverted tendencies, Master Roshi is a highly respected martial arts master known for his vast experience and wisdom.',
         classes: " Training under Master Roshi is physically demanding. He pushes his students to improve their strength, speed, and endurance through rigorous exercises and sparring sessions. His training also focuses on developing their unique strengths and abilities.",
         index: "assets/images/bola.png",
-        img: "assets/images/logo.png",
+        img: "assets/images/roshi.png",
         style: "Master Roshi's teaching style is unconventional yet effective. He combines traditional martial arts training with a dash of humor and quirkiness. He often uses unorthodox methods to push his students to their limits, instilling discipline and perseverance.",
         abilities: "Master Roshi is a legendary martial artist and is the creator of the Kamehameha, a powerful energy wave technique. He imparts his knowledge of martial arts, combat techniques, and strategic thinking to his students, teaching them to harness their energy and develop their fighting skills."
     },
