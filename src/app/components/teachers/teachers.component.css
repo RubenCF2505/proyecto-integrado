@@ -2,7 +2,7 @@
   width: 175px; /* Ancho del marco */
   height: 175px; /* Alto del marco */
   border: 2px solid #000; /* Borde del marco */
-
+  float: left;
   border-radius: 50%;
   position: relative;
 }
@@ -20,7 +20,6 @@
 }
 
 .bg {
-  
   background: rgb(5, 150, 105);
   background: linear-gradient(
     58deg,
@@ -28,8 +27,11 @@
     rgba(217, 119, 6, 1) 60%
   );
 }
-.hov:hover{
+.hov:hover {
   background-color: rgb(249, 249, 249);
+}
+.img{
+size: 70px;
 }
 .rounded-div {
   background-color: white;
@@ -41,4 +43,48 @@
   height: 150px; /* Set the desired height */
   border: 6px solid #000000; /* Set the border width and color */
   border-radius: 50%; /* Make the div a circle by setting border-radius to 50% */
+}
+@media (max-width: 768px) {
+  .marco {
+    width: 102px; /* Adjust width for smaller screens */
+    height: 102px;/* Adjust height for smaller screens */
+    position: relative;
+    float: left;
+  }
+
+  .indice {
+    width: 40px; /* Adjust width for smaller screens */
+    right: 5px; /* Adjust position for smaller screens */
+    bottom: 5px; /* Adjust position for smaller screens */
+  }
+
+  .rounded-div {
+    width: 80px; /* Adjust width for smaller screens */
+    height: 80px; /* Adjust height for smaller screens */
+    border: 3px solid #000000; /* Adjust border for smaller screens */
+  }
+}
+
+/* Additional responsive styling for even smaller screens, if needed */
+@media (max-width: 480px) {
+  .marco {
+    width: 80px; /* Adjust width for even smaller screens */
+    height: 80px;
+   /* Adjust height for even smaller screens */
+  }
+
+  .indice {
+    width: 30px; /* Adjust width for even smaller screens */
+    right: 3px; /* Adjust position for even smaller screens */
+    bottom: 3px; /* Adjust position for even smaller screens */
+  }
+
+  .rounded-div {
+    width: 63px; /* Adjust width for even smaller screens */
+    height: 63px; /* Adjust height for even smaller screens */
+    border: 3px solid #000000; 
+    position: absolute;
+    left: 6px;/* Adjust border for even smaller screens */
+    top: 7px;
+  }
 }
