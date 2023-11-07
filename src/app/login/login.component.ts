@@ -1,5 +1,6 @@
+// login.component.ts
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -7,13 +8,18 @@ import { FormBuilder, FormControl } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private formBuilder: FormBuilder) { }
-  form = this.formBuilder.group({
-    username: [''],
-    password: ['']
-  })
-  onSubmit(){
-    console.log(this.form);
-    
+  username: string = '';
+  password: string = '';
+
+  constructor(private http: HttpClient) {}
+
+  onSubmit() {
+    const loginData = { username: this.username, password: this.password };
+
+    this.http.post('http://localhost/api/login.php', loginData)
+      .subscribe(response => {
+      console.log(response);
+      
+      });
   }
 }

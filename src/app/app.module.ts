@@ -16,7 +16,7 @@ import { ContainerComponent } from './components/container/container.component';
 import { ProgressBarComponent } from './components/header/progress-bar/progress-bar.component';
 import { TeachersComponent } from './components/teachers/teachers.component';
 import { FormComponent } from './components/form/form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from './components/form/input/input.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
@@ -26,6 +26,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { LoginComponent } from './login/login.component';
 import { MatIconModule } from '@angular/material/icon';
 import { GalleriaModule } from 'primeng/galleria';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,8 @@ import { GalleriaModule } from 'primeng/galleria';
     MatSelectModule,
     MatIconModule,
     GalleriaModule,
+    HttpClientModule,
+    FormsModule,
   ],
 
 
