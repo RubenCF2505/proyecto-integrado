@@ -1,32 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { TabMenuModule } from 'primeng/tabmenu';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { ProgressBarModule } from 'primeng/progressbar';
+
 // For dynamic progressbar demo
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSelectModule } from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { ToastModule } from 'primeng/toast';
+import { AboutUsComponent } from './about-us/about-us.component';
 import { ContainerComponent } from './components/container/container.component';
+import { FormComponent } from './components/form/form.component';
+import { InputComponent } from './components/form/input/input.component';
 import { ProgressBarComponent } from './components/header/progress-bar/progress-bar.component';
 import { TeachersComponent } from './components/teachers/teachers.component';
-import { FormComponent } from './components/form/form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { InputComponent } from './components/form/input/input.component';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatInputModule } from '@angular/material/input';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSelectModule } from '@angular/material/select';
-import { AboutUsComponent } from './about-us/about-us.component';
 import { LoginComponent } from './login/login.component';
-import { MatIconModule } from '@angular/material/icon';
-import { GalleriaModule } from 'primeng/galleria';
-import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -43,9 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TabMenuModule,
-    ProgressBarModule,
-    ToastModule,
+
+
     MatSidenavModule,
     MatProgressBarModule,
     CarouselModule,
@@ -55,9 +52,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatSelectModule,
     MatIconModule,
-    GalleriaModule,
+
     HttpClientModule,
     FormsModule,
+
   ],
 
 

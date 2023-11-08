@@ -10,18 +10,20 @@
   <div class="flex flex-row justify-between items-center w-full">
     <div class="flex items-center p-3">
       <img class="img" [src]="imgPath" width="70" height="70" />
-      <a href="" ><h1 class="mx-2 text-2xl rockSalt">Escuela Tortuga</h1></a>
+      <a href="" ><h1 class="mx-2 rockSalt text-sm md:text-lg">Escuela Tortuga</h1></a>
     </div>
     <nav class="menu pr-2">
       <a
         *ngFor="let item of items"
         routerLink="/{{ item.id }}"
-        class="text mx-4"
+        class="text mx-4 text-xs md:text-base lg:text-lg"
       >
         {{ item.label }}
       </a>
+      
     </nav>
   </div>
 
   <app-progress-bar></app-progress-bar>
 </div>
+
