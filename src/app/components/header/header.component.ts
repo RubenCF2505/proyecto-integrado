@@ -20,9 +20,25 @@ export class HeaderComponent implements OnInit {
       { label: 'About us', id: 'aboutUs' },
       { label: 'Teacher Access', id: 'login' },
     ];
+    this.checkSize()
   }
+  isMobile: boolean = false;
+  mobileMenuOpen: boolean = false;
 
- 
+  // ... Existing code
+
+  toggleMobileMenu(): void {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any): void {
+    this.isMobile = window.innerWidth <= 1024;
+  }
+  checkSize(): void {
+if( window.innerWidth <= 1024){
+  this.isMobile=true
+}
+  }
 
 
 
