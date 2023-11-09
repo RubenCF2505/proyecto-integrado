@@ -123,11 +123,11 @@ export class FormComponent {
   }
   showImage() {
     if (this.Id) {
-      const img = this.teachers[this.teacherId-1].img
+      const img = this.teachers[this.teacherId - 1].img
       document.getElementById('img')!.style.backgroundImage = `url(${img})`
     }
     this.form.get('teacher')?.valueChanges.subscribe((x: any) => {
-      const img = this.teachers[x-1].img
+      const img = this.teachers[x - 1].img
       document.getElementById('img')!.style.backgroundImage = `url(${img})`
     });
 

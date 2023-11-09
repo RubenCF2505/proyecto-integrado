@@ -1,9 +1,9 @@
 <form class="mx-6" [formGroup]="form">
-  <div class="grid pb-1 md:grid-cols-12 border-t">
+  <div class="grid pb-1 md:grid-cols-12 ">
     <h2 class="blocks">Personal Data</h2>
   </div>
   <!--NAME-->
-  <div class="grid gap-6 pb-3 md:grid-cols-2">
+  <div class="grid gap-6 pb-3 md:grid-cols-2 border-t">
     <app-input
       [form]="form"
       label="First Name"
@@ -21,13 +21,13 @@
 
   <div class="grid gap-6 md:grid-cols-12">
     <!--NIF-->
-    <div class="">
+    <div class="md:col-span-4">
       <app-input type="text" [form]="form" label="NIF" controlName="nif">
       </app-input>
     </div>
 
     <!--BIRTHDATE-->
-    <div class="mb-3 col-span-2">
+    <div class="mb-3  md:col-span-4">
       <app-input
         [form]="form"
         label="Birth date"
@@ -36,7 +36,7 @@
       ></app-input>
     </div>
     <!--NUMBER-->
-    <div class="col-span-2">
+    <div class="md:col-span-4">
       <app-input
         [form]="form"
         label="Phone Number"
@@ -44,17 +44,17 @@
         controlName="phone"
       ></app-input>
     </div>
-    <div class="col-span-7">
+    <div class="md:col-span-12 mb-2">
       <app-input [form]="form" type="text" label="Email" controlName="email">
       </app-input>
     </div>
   </div>
   <!--EMAIL-->
 
-  <div class="grid pb-1 md:grid-cols-12 border-t">
+  <div class="grid pb-1 :grid-cols-12">
     <h2 class="blocks">Address</h2>
   </div>
-  <div class="grid gap-6 pt-3 pb-3 md:grid-cols-2">
+  <div class="grid gap-6 pt-3 pb-3  grid-cols-1 2xl:grid-cols-2  border-t">
     <div class="grid gap-6 md:grid-cols-3" formGroupName="place">
       <!--AUTONOMOUS COMMUNITY-->
 
@@ -145,7 +145,7 @@
       <div class="mb-6">
         <app-input
           [form]="addressFormGroup"
-          label="PostalCode"
+          label="Codigo postal"
           controlName="PC"
         ></app-input>
       </div>
