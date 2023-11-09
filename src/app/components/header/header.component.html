@@ -14,9 +14,7 @@
         <a href=""><h1 class="mx-2 rockSalt text-sm md:text-lg">Escuela Tortuga</h1></a>
       </div>
   
-      <!-- Render hamburger menu if isMobile is true -->
       <div *ngIf="isMobile">
-        <!-- Add code for your hamburger menu here -->
         <button (click)="toggleMobileMenu()" class="md:mr-10 mr-5 text-4xl">☰</button>
         <div *ngIf="mobileMenuOpen" class="mobile-menu">
           <a *ngFor="let item of items" routerLink="/{{ item.id }}" class="text text-xs md:text-base lg:text-lg">
