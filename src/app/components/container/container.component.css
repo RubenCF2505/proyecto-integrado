@@ -12,10 +12,13 @@ body {
     justify-content: center;
   }
 }
-.fondo {
+.imagen {
   background-image: url("/assets/images/contenedor.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 600px;
+
+}
+.dark-mode{
 
 }

@@ -2,11 +2,11 @@
   <div *ngFor="let item of teachers; let i = index" class="mx-10 border-b py-5 rounded-sm p-2 hov">
     <h2 class="text-3xl ml-3">{{ item.name }}</h2>
     <div class="m-3 block ">
-      <div class=" bg mr-2 w-44 h-44 border-2 border-black float-left relative rounded-full">
-        <div class="w-20 absolute rounded-full right-2 bottom-2 z-10">
+      <div class=" bg mr-2 lg:w-44 lg:h-44 border-2 border-black float-left relative rounded-full">
+        <div class="w-20 absolute rounded-full right-2 bottom-2 z-50">
           <img [src]="item.index" alt="" class="" />
         </div>
-          <div class="rounded-div overflow-hidden absolute right-1">   <img [src]="item.img" class="" /></div>
+          <div class="bg-teal-50 z-10 top-3.5 right-3.5 w-36 h-36 border-4 border-black rounded-full overflow-hidden absolute ">   <img [src]="item.img" class="" /></div>
         <div class="relative">
        
         </div>

@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContainerComponent } from './components/container/container.component';
 import { TeachersComponent } from './components/teachers/teachers.component';
 import { FormComponent } from './components/form/form.component';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { LoginComponent } from './login/login.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: '', component: ContainerComponent },
