@@ -17,14 +17,15 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { AboutUsComponent } from './about-us/about-us.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContainerComponent } from './components/container/container.component';
 import { FormComponent } from './components/form/form.component';
 import { InputComponent } from './components/form/input/input.component';
 import { ProgressBarComponent } from './components/header/progress-bar/progress-bar.component';
 import { TeachersComponent } from './components/teachers/teachers.component';
-import { LoginComponent } from './login/login.component';
-
+import { LoginComponent } from './components/login/login.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { ToggleButtonComponent } from './components/toggle-button/toggle-button.component';
 
 @NgModule({
   declarations: [
@@ -36,13 +37,14 @@ import { LoginComponent } from './login/login.component';
     FormComponent,
     InputComponent,
     AboutUsComponent,
-    LoginComponent
+    LoginComponent,
+    ToggleButtonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
 
-
+    MatSlideToggleModule,
     MatSidenavModule,
     MatProgressBarModule,
     CarouselModule,

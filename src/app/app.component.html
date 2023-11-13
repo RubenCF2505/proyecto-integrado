@@ -1,5 +1,7 @@
 <div class="h-full">
-  <app-header></app-header>
-  <router-outlet></router-outlet>
-  
+
+  <div [ngClass]="service.containerStyle.value==true ? 'dark' : '' " >
+    <app-header></app-header>
+  <router-outlet ></router-outlet>
+  </div>
 </div>

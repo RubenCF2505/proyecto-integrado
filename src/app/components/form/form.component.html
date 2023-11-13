@@ -1,195 +1,197 @@
-<form class="mx-6" [formGroup]="form">
-  <div class="grid pb-1 md:grid-cols-12 ">
-    <h2 class="blocks">Personal Data</h2>
-  </div>
-  <!--NAME-->
-  <div class="grid gap-6 pb-3 md:grid-cols-2 border-t">
-    <app-input
-      [form]="form"
-      label="First Name"
-      controlName="firstName"
-    ></app-input>
-
-    <!--LASTNAME-->
-    <app-input
-      type="text"
-      [form]="form"
-      label="Surname"
-      controlName="surName"
-    ></app-input>
-  </div>
-
-  <div class="grid gap-6 md:grid-cols-12">
-    <!--NIF-->
-    <div class="md:col-span-4">
-      <app-input type="text" [form]="form" label="NIF" controlName="nif">
-      </app-input>
+<div class="h-screen  dark:bg-gray-800">
+  <form class="p-6  dark:bg-gray-800 dark:text-gray-300 m-0" [formGroup]="form">
+    <div class="grid pb-1 text-sm">
+      <h2 class="mt-2">Personal Data</h2>
     </div>
-
-    <!--BIRTHDATE-->
-    <div class="mb-3  md:col-span-4">
+    <!--NAME-->
+    <div class="grid gap-6 pb-3 md:grid-cols-2 border-t">
       <app-input
         [form]="form"
-        label="Birth date"
-        type="date"
-        controlName="birthDate"
+        label="First Name"
+        controlName="firstName"
       ></app-input>
-    </div>
-    <!--NUMBER-->
-    <div class="md:col-span-4">
+
+      <!--LASTNAME-->
       <app-input
-        [form]="form"
-        label="Phone Number"
         type="text"
-        controlName="phone"
+        [form]="form"
+        label="Surname"
+        controlName="surName"
       ></app-input>
     </div>
-    <div class="md:col-span-12 mb-2">
-      <app-input [form]="form" type="text" label="Email" controlName="email">
-      </app-input>
-    </div>
-  </div>
-  <!--EMAIL-->
 
-  <div class="grid pb-1 :grid-cols-12">
-    <h2 class="blocks">Address</h2>
-  </div>
-  <div class="grid gap-6 pt-3 pb-3  grid-cols-1 2xl:grid-cols-2  border-t">
-    <div class="grid gap-6 md:grid-cols-3" formGroupName="place">
-      <!--AUTONOMOUS COMMUNITY-->
-
-      <div class="mb-6">
-        <mat-label>Autonomous Community</mat-label>
-        <!-- <input type="text" placeholder="Andalucía" list="list" /> -->
-        <select
-          id="list"
-          formControlName="AC"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          id="AC"
-        >
-        <option value="0">Select your Comunnity</option>
-          <option *ngFor="let item of community" [value]="item.code">
-            {{ item.label }}
-          </option>
-        </select>
+    <div class="grid gap-6 md:grid-cols-12">
+      <!--NIF-->
+      <div class="md:col-span-4">
+        <app-input type="text" [form]="form" label="NIF" controlName="nif">
+        </app-input>
       </div>
-      <!--DISTRICT-->
 
-      <div class="mb-6">
-        <mat-label>District</mat-label>
-        <select
-          id="street"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          formControlName="district"
-          placeholder="Granada"
-        >
-          <option value="0">Select your district</option>
-          <option *ngFor="let item of provincias" [value]="item.code">
-            {{ item.label }}
-          </option>
-        </select>
-      </div>
-      <!--CITY-->
-
-      <div class="mb-6">
-        <mat-label>City</mat-label>
-        <select
-          id="street"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          formControlName="city"
-          placeholder="Granada"
-        >
-          <option value="0">Select your city</option>
-          <option *ngFor="let item of ciudades" [value]="item.code">
-            {{ item.label }}
-          </option>
-        </select>
-      </div>
-    </div>
-    <div class="grid gap-6 mt-1 md:grid-cols-6" formGroupName="address">
-      <!--DIRECTION-->
-
-      <div class="col-span-2">
+      <!--BIRTHDATE-->
+      <div class="mb-3 md:col-span-4">
         <app-input
-          [form]="addressFormGroup"
-          label="Street"
-          controlName="st"
+          [form]="form"
+          label="Birth date"
+          type="date"
+          controlName="birthDate"
         ></app-input>
       </div>
       <!--NUMBER-->
-
-      <div class="mb-6">
+      <div class="md:col-span-4">
         <app-input
-          [form]="addressFormGroup"
-          label="Number"
-          controlName="number"
+          [form]="form"
+          label="Phone Number"
+          type="text"
+          controlName="phone"
         ></app-input>
       </div>
-      <div class="mb-6">
-        <!--FLOOR-->
-        <app-input
-          [form]="addressFormGroup"
-          label="Floor"
-          controlName="floor"
-        ></app-input>
-      </div>
-      <!--LETTER-->
-
-      <div class="mb-6">
-        <app-input
-          [form]="addressFormGroup"
-          label="Letter"
-          controlName="letter"
-        ></app-input>
-      </div>
-      <div class="mb-6">
-        <app-input
-          [form]="addressFormGroup"
-          label="Codigo postal"
-          controlName="PC"
-        ></app-input>
+      <div class="md:col-span-12 mb-2">
+        <app-input [form]="form" type="text" label="Email" controlName="email">
+        </app-input>
       </div>
     </div>
-  </div>
-  <!--CHOOSE TEACHER-->
-  <label
-    for="teacher"
-    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-    >Your Teacher</label
-  >
-  <div class="mb-6 grid md:grid-cols-6 float-left w-6/12">
-    <select
-      id="teacher"
-      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 col-span-5"
-      formControlName="teacher"
-      *ngIf="!Id"
+    <!--EMAIL-->
+
+    <div class="grid pb-1 :grid-cols-12">
+      <h2 class="blocks">Address</h2>
+    </div>
+    <div class="grid gap-6 pt-3 pb-3 grid-cols-1 2xl:grid-cols-2 border-t">
+      <div class="grid gap-6 md:grid-cols-3" formGroupName="place">
+        <!--AUTONOMOUS COMMUNITY-->
+
+        <div class="mb-6">
+          <mat-label>Autonomous Community</mat-label>
+          <!-- <input type="text" placeholder="Andalucía" list="list" /> -->
+          <select
+            id="list"
+            formControlName="AC"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            id="AC"
+          >
+            <option value="0">Select your Comunnity</option>
+            <option *ngFor="let item of community" [value]="item.code">
+              {{ item.label }}
+            </option>
+          </select>
+        </div>
+        <!--DISTRICT-->
+
+        <div class="mb-6">
+          <mat-label>District</mat-label>
+          <select
+            id="street"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            formControlName="district"
+            placeholder="Granada"
+          >
+            <option value="0">Select your district</option>
+            <option *ngFor="let item of provincias" [value]="item.code">
+              {{ item.label }}
+            </option>
+          </select>
+        </div>
+        <!--CITY-->
+
+        <div class="mb-6">
+          <mat-label>City</mat-label>
+          <select
+            id="street"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            formControlName="city"
+            placeholder="Granada"
+          >
+            <option value="0">Select your city</option>
+            <option *ngFor="let item of ciudades" [value]="item.code">
+              {{ item.label }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="grid gap-6 mt-1 md:grid-cols-6" formGroupName="address">
+        <!--DIRECTION-->
+
+        <div class="col-span-2">
+          <app-input
+            [form]="addressFormGroup"
+            label="Street"
+            controlName="st"
+          ></app-input>
+        </div>
+        <!--NUMBER-->
+
+        <div class="mb-6">
+          <app-input
+            [form]="addressFormGroup"
+            label="Number"
+            controlName="number"
+          ></app-input>
+        </div>
+        <div class="mb-6">
+          <!--FLOOR-->
+          <app-input
+            [form]="addressFormGroup"
+            label="Floor"
+            controlName="floor"
+          ></app-input>
+        </div>
+        <!--LETTER-->
+
+        <div class="mb-6">
+          <app-input
+            [form]="addressFormGroup"
+            label="Letter"
+            controlName="letter"
+          ></app-input>
+        </div>
+        <div class="mb-6">
+          <app-input
+            [form]="addressFormGroup"
+            label="Codigo postal"
+            controlName="PC"
+          ></app-input>
+        </div>
+      </div>
+    </div>
+    <!--CHOOSE TEACHER-->
+    <label
+      for="teacher"
+      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      >Your Teacher</label
     >
-      <option *ngFor="let teacher of teachers" [value]="teacher.id">
-        {{ teacher.name }}
-      </option>
-    </select>
-    <div *ngIf="Id" class="col-span-5">
-      <input
-        type="text"
+    <div class="mb-6 grid md:grid-cols-6 float-left w-6/12">
+      <select
+        id="teacher"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 col-span-5"
         formControlName="teacher"
-        readonly
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-      />
-
-      <button
-        routerLink="/matriculate"
-        (click)="setId()"
-        class="bg-gray-400 my-4 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        *ngIf="!Id"
       >
-        Change teacher
-      </button>
+        <option *ngFor="let teacher of teachers" [value]="teacher.id">
+          {{ teacher.name }}
+        </option>
+      </select>
+      <div *ngIf="Id" class="col-span-5">
+        <input
+          type="text"
+          formControlName="teacher"
+          readonly
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+
+        <button
+          routerLink="/matriculate"
+          (click)="setId()"
+          class="bg-gray-400 my-4 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Change teacher
+        </button>
+      </div>
     </div>
-  </div>
-  <div class="image" id="img"></div>
-  <button
-    type="submit"
-    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-  >
-    Submit
-  </button>
-</form>
+    <div class="image" id="img"></div>
+    <button
+      type="submit"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+    >
+      Submit
+    </button>
+  </form>
+</div>

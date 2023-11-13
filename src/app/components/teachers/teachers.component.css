@@ -64,6 +64,9 @@ size: 70px;
     border: 3px solid #000000; /* Adjust border for smaller screens */
   }
 }
+.rockSalt {
+  font-family: "Rock Salt", cursive;
+}
 
 /* Additional responsive styling for even smaller screens, if needed */
 @media (max-width: 480px) {
