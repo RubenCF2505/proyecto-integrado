@@ -1,6 +1,6 @@
 import { Injectable, Input } from '@angular/core';
 import { TeachersComponent } from './components/teachers/teachers.component';
-import { Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TEACHERS } from './components/teachers/mock-teachers';
 
@@ -21,5 +21,6 @@ export class ServicesService {
   getImages(){
     return 
   }
-  
+  public containerStyle= new BehaviorSubject<boolean>(false)
+
 }

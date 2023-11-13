@@ -7,22 +7,22 @@
   />
 </head>
 
-<div class="bg-orange-100 fixed-toolbar pt-4 -mb-1">
-  <mat-slide-toggle color="warn"
-    class="float-right mr-8 -mb-2"
+<div class="bg-orange-100 dark:bg- fixed-toolbar  pt-4 -mb-1 ">
+  <mat-slide-toggle color="primary" (toggleChange)="toggleStyle() "
+    class="float-right md:mr-8 mr-4 -mb-2"
     #darkModeSwitch
   ></mat-slide-toggle>
   <div class="flex flex-row justify-between items-center w-full">
     <div class="flex items-center p-3">
       <img class="img" [src]="imgPath" width="70" height="70" />
       <a href=""
-        ><h1 class="mx-2 rockSalt text-sm md:text-lg">Escuela Tortuga</h1></a
+        ><h1 class="mx-2 rockSalt text-sm md:text-2xl">Escuela Tortuga</h1></a
       >
     </div>
 
     <div *ngIf="isMobile" class="">
       <div class="flex">
-        <button (click)="toggleMobileMenu()" class="md:mr-10 mr-5 text-4xl">
+        <button (click)="toggleMobileMenu()" class="lg:mr-10 mr-5 text-4xl">
           ☰
         </button>
       </div>
@@ -30,12 +30,12 @@
     </div>
     <div
       *ngIf="mobileMenuOpen"
-      class="mobile-menu w-3/12 bg-slate-600 opacity-80 -pb-20 bg"
+      class="mobile-menu w-3/12 bg-slate-600 dark:bg-slate-100 opacity-80 -pb-20 bg"
     >
       <a
         *ngFor="let item of items"
         routerLink="/{{ item.id }}"
-        class="text text-xs md:text-base lg:text-lg w-full text-center text-white border-white border-b pb-2"
+        class="text text-xs md:text-base lg:text-lg w-full text-center text-white  dark:text-black  border-white dark:border-slate-300 border-b pb-2"
       >
         {{ item.label }}
       </a>
@@ -53,7 +53,7 @@
         </a>
       </nav>
       <div
-        class="sm:float-right hidden lg:block mx-4 -mt-3 mb-2 transform transition-transform float-left sm:scale-90"
+        class="sm:float-right hidden lg:block mx-4 -mt-3 mb-2 "
       ></div>
     </div>
   </div>
