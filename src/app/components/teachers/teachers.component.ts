@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TEACHERS } from './mock-teachers';
 import { Teacher } from 'src/app/teacher';
 import { Router } from '@angular/router';
-import {MatIconModule} from '@angular/material/icon';
+
 
 
 @Component({

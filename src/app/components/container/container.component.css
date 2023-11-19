@@ -12,10 +12,19 @@ body {
     justify-content: center;
   }
 }
+.banner{
+	background-image: url("../../../assets/images/sunset.jpg");
+
+
+}
 .imagen {
   background-image: url("/assets/images/contenedor.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 600px;
 
+}
+.image{
+	background-image: url("../../../assets/images/fondo.jpg");
+	
 }

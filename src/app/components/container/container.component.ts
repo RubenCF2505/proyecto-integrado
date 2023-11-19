@@ -1,27 +1,19 @@
 import { Component } from '@angular/core';
 import { ServicesService } from 'src/app/services.service';
-
+import simpleParallax from 'simple-parallax-js';
 @Component({
   selector: 'app-container',
   templateUrl: './container.component.html',
-  styleUrls: ['./container.component.css']
+  styleUrls: ['./container.component.css'],
 })
-export class ContainerComponent{
+export class ContainerComponent {
+  constructor(public readonly service: ServicesService) {}
+  imgPath = '/assets/images/logo.png';
 
-  constructor(public readonly service: ServicesService){}
-  imgPath="/assets/images/logo.png"
-
-  toggle(){
-    this.service.containerStyle.asObservable().subscribe(x=>{
-      if(x){
-
-      }else{
-
-      }
-      
-    })
-  }
   ngOnInit(): void {
-    this.toggle()
-  }  
+    
+    const image = document.getElementsByClassName("sunset");
+    new simpleParallax(image,{scale:1.3});
+  
+  }
 }

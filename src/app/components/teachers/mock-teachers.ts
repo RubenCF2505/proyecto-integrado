@@ -5,63 +5,62 @@ export const TEACHERS: Teacher[] = [
     {
         id: 1,
         name: 'Goku',
-        description: "Goku, the iconic hero of the Dragon Ball series, may not be the first character that comes to mind when thinking of teachers, but he has played a significant role as a mentor and teacher to various characters throughout the series. Goku's teaching style is rooted in his own experiences and values, making him a unique and impactful educator.",
-        classes: "Goku's teaching philosophy is deeply rooted in his own continuous quest for self-improvement. He encourages his students to always strive for greatness and never settle for mediocrity. Goku's dedication to becoming stronger serves as a powerful example to his disciples.",
+        description: "Goku, el icónico héroe de la serie Dragon Ball, puede que no sea el primer personaje que se te ocurra al pensar en profesores, pero ha desempeñado un papel significativo como mentor y maestro para varios personajes a lo largo de la serie. El estilo de enseñanza de Goku está arraigado en sus propias experiencias y valores, haciéndolo un educador único e impactante.",
+        classes: "La filosofía de enseñanza de Goku está profundamente arraigada en su búsqueda continua de auto-superación. Anima a sus estudiantes a esforzarse siempre por la grandeza y nunca conformarse con la mediocridad. La dedicación de Goku para volverse más fuerte sirve como un poderoso ejemplo para sus discípulos.",
         index: "assets/images/bola.png",
         img: "assets/images/goku.png",
-        style: "Goku's teaching style is characterized by his hands-on, practical approach. He often believes that the best way to learn is through experience, and he encourages his students to face challenges head-on. He prefers to lead by example, showing his students what is possible through hard work, determination, and a strong sense of justice.",
-        abilities: "Goku is one of the most powerful martial artists in the Dragon Ball universe. He imparts his vast knowledge of combat techniques, such as the Kamehameha and various transformations like Super Saiyan, to his students. His combat training is intense and focused on honing their physical abilities.s"
+        style: "El estilo de enseñanza de Goku se caracteriza por su enfoque práctico y práctico. A menudo cree que la mejor manera de aprender es a través de la experiencia, y anima a sus estudiantes a enfrentar desafíos de frente. Prefiere liderar con el ejemplo, mostrando a sus estudiantes lo que es posible mediante el trabajo duro, la determinación y un fuerte sentido de la justicia.",
+        abilities: "Goku es uno de los artistas marciales más poderosos en el universo Dragon Ball. Imparte su vasto conocimiento de técnicas de combate, como el Kamehameha y diversas transformaciones como Super Saiyan, a sus estudiantes. Su entrenamiento de combate es intenso y se centra en perfeccionar sus habilidades físicas."
     },
     {
         id: 2,
         name: 'Vegeta',
-        description: 'Vegeta, a character in the Dragon Ball series, is not traditionally portrayed as a teacher or mentor; however, in certain moments and contexts, he does take on the role of imparting knowledge and skills to others.',
-        classes: "Vegeta's training sessions are incredibly intense. He pushes his students to surpass their limits through grueling workouts and battles. His high expectations and competitive spirit often serve as a source of motivation for his students to excel.",
+        description: 'Vegeta, un personaje en la serie Dragon Ball, no se retrata tradicionalmente como un profesor o mentor; sin embargo, en ciertos momentos y contextos, asume el papel de impartir conocimientos y habilidades a otros.',
+        classes: "Las sesiones de entrenamiento de Vegeta son increíblemente intensas. Presiona a sus estudiantes para que superen sus límites a través de entrenamientos agotadores y batallas. Sus altas expectativas y espíritu competitivo a menudo sirven como fuente de motivación para que sus estudiantes destaquen.",
         index: "assets/images/bola.png",
         img: "assets/images/vegeta.png",
-        style: "Vegeta's teaching style is characterized by his strict, disciplined, and no-nonsense approach. He has a strong belief in pushing his students to their limits, demanding constant improvement and perfection in their techniques. He's a tough and demanding mentor.",
-        abilities: "Vegeta is one of the most powerful Saiyans and martial artists in the Dragon Ball universe. He imparts his knowledge of combat techniques, strategies, and Saiyan transformations to his students. His training focuses on developing raw power, endurance, and combat instincts."
+        style: "El estilo de enseñanza de Vegeta se caracteriza por su enfoque estricto, disciplinado y sin rodeos. Tiene una fuerte creencia en empujar a sus estudiantes a sus límites, exigiendo mejora constante y perfección en sus técnicas. Es un mentor duro y exigente.",
+        abilities: "Vegeta es uno de los Saiyans y artistas marciales más poderosos en el universo Dragon Ball. Imparte su conocimiento de técnicas de combate, estrategias y transformaciones Saiyan a sus estudiantes. Su entrenamiento se centra en desarrollar poder crudo, resistencia e instintos de combate."
     },
     {
         id: 3,
         name: 'Master Roshi',
-        description: 'Master Roshi, a beloved character in the Dragon Ball series, assumes the role of a teacher and mentor to several prominent characters, including Goku and Krillin. Despite his eccentricities and occasional perverted tendencies, Master Roshi is a highly respected martial arts master known for his vast experience and wisdom.',
-        classes: " Training under Master Roshi is physically demanding. He pushes his students to improve their strength, speed, and endurance through rigorous exercises and sparring sessions. His training also focuses on developing their unique strengths and abilities.",
+        description: 'Master Roshi, un querido personaje en la serie Dragon Ball, asume el papel de maestro y mentor de varios personajes destacados, incluidos Goku y Krillin. A pesar de sus excentricidades y tendencias ocasionalmente pervertidas, Master Roshi es un maestro de artes marciales altamente respetado conocido por su vasta experiencia y sabiduría.',
+        classes: "El entrenamiento bajo el mando de Master Roshi es físicamente exigente. Presiona a sus estudiantes para que mejoren su fuerza, velocidad y resistencia a través de ejercicios rigurosos y sesiones de combate. Su entrenamiento también se enfoca en desarrollar sus fortalezas y habilidades únicas.",
         index: "assets/images/bola.png",
         img: "assets/images/roshi.png",
-        style: "Master Roshi's teaching style is unconventional yet effective. He combines traditional martial arts training with a dash of humor and quirkiness. He often uses unorthodox methods to push his students to their limits, instilling discipline and perseverance.",
-        abilities: "Master Roshi is a legendary martial artist and is the creator of the Kamehameha, a powerful energy wave technique. He imparts his knowledge of martial arts, combat techniques, and strategic thinking to his students, teaching them to harness their energy and develop their fighting skills."
+        style: "El estilo de enseñanza de Master Roshi es poco convencional pero efectivo. Combina el entrenamiento tradicional de artes marciales con un toque de humor y extravagancia. A menudo utiliza métodos poco ortodoxos para llevar a sus estudiantes a sus límites, inculcando disciplina y perseverancia.",
+        abilities: "Master Roshi es un maestro de artes marciales legendario y es el creador del Kamehameha, una técnica poderosa de ondas de energía. Imparte su conocimiento de artes marciales, técnicas de combate y pensamiento estratégico a sus estudiantes, enseñándoles a canalizar su energía y desarrollar sus habilidades de lucha."
     },
     {
         id: 4,
         name: 'Whis',
-        description: 'Whis takes on the role of a teacher and mentor with extraordinary abilities. As an angelic being, he possesses vast knowledge and wisdom, making him an ideal instructor. With a calm and composed demeanor, Whis is the epitome of patience and serenity.',
-        classes: "Beyond combat and physical training, Whis imparts valuable life lessons to his students. He emphasizes humility, respect, and responsibility, encouraging them to be mindful of their actions and choices.",
-        img: "assets/images/logo.png",
+        description: 'Whis asume el papel de maestro y mentor con habilidades extraordinarias. Como ser angelical, posee un vasto conocimiento y sabiduría, convirtiéndolo en un instructor ideal. Con una actitud tranquila y compuesta, Whis es la personificación de la paciencia y la serenidad.',
+        classes: "Más allá del combate y el entrenamiento físico, Whis imparte valiosas lecciones de vida a sus estudiantes. Enfatiza la humildad, el respeto y la responsabilidad, animándolos a ser conscientes de sus acciones y elecciones.",
+        img: "assets/images/whis.png",
         index: "assets/images/bola.png",
-        style: "Whis employs a unique and effective teaching style that combines guidance, martial arts training, and life lessons. He is a strict but fair teacher who emphasizes discipline and perseverance. He values the development of both physical and mental skills, pushing his students to reach their full potential.",
-        abilities: " Whis is an unparalleled martial arts master. He imparts his knowledge of combat techniques, including the mysterious and powerful Ultra Instinct, to his students. Under his guidance, students learn to harness their energy, perfect their fighting forms, and develop superhuman abilities."
+        style: "Whis emplea un estilo de enseñanza único y efectivo que combina orientación, entrenamiento de artes marciales y lecciones de vida. Es un maestro estricto pero justo que enfatiza la disciplina y la perseverancia. Valora el desarrollo tanto de habilidades físicas como mentales, presionando a sus estudiantes para que alcancen su máximo potencial.",
+        abilities: "Whis es un maestro de artes marciales incomparable. Imparte su conocimiento de técnicas de combate, incluido el misterioso y poderoso Ultra Instinct, a sus estudiantes. Bajo su guía, los estudiantes aprenden a canalizar su energía, perfeccionar sus formas de lucha y desarrollar habilidades sobrehumanas."
     },
     {
         id: 5,
-        name: 'Kaio Sama',
-        description: 'Kaio-sama, or King Kai, is a beloved character from the Dragon Ball series who serves as a teacher and mentor to the Z Fighters. Despite his diminutive size and jovial personality, King Kai is a wise and experienced martial arts master who imparts invaluable knowledge to his students.',
-        classes:"In addition to physical combat training, King Kai emphasizes the importance of mental and spiritual development. He teaches his students to remain calm and focused under pressure, a skill that becomes invaluable during intense battles.",
+        name: 'Gohan',
+        description: 'Gohan sería un excelente profesor. Con sus experiencias diversas, desde batallas intensas hasta búsquedas académicas, aportaría una perspectiva única al aula. Su actitud tranquila y paciente crearía un entorno de aprendizaje positivo, y sería excelente explicando conceptos complejos de manera sencilla. Además, podría compartir algunas historias increíbles sobre salvar el mundo y entrenar con guerreros poderosos. ¡Solo imagina la emoción de tener a un Saiyan como tu profesor!',
+        classes:"Gohan probablemente enseñaría una variedad de clases, reflejando su experiencia diversa. Tal vez lideraría clases en técnicas avanzadas de artes marciales, física o incluso un curso sobre la historia intergaláctica. Sus clases no solo serían educativas, sino también impregnadas de experiencias del mundo real, dando vida a las materias. Los estudiantes saldrían de sus clases no solo con conocimientos, sino también con una sensación de inspiración y una comprensión más profunda del mundo que los rodea.",
         index: "assets/images/bola.png",
-        img: "assets/images/logo.png",
-        style: " Kaio Sama has a unique and unconventional teaching style. He is known for his quirky sense of humor and laid-back demeanor, often incorporating humor into his lessons. He prefers to train in a relaxed and informal atmosphere, which helps his students feel at ease while learning.",
-        abilities: "Kaio Sama is a renowned martial arts expert who specializes in techniques like the Kaio-ken and the Spirit Bomb. He shares his martial arts knowledge with his students, teaching them advanced techniques and strategies that prove crucial in battles against powerful foes."
+        img: "assets/images/gohan.png",
+        style: "El estilo de enseñanza de Gohan sería una mezcla armoniosa de paciencia y entusiasmo. Priorizaría la comprensión sobre la memorización mecánica, alentando a los estudiantes a explorar conceptos en profundidad en lugar de simplemente superficialmente. Su enfoque sería de apoyo, fomentando un sentido de camaradería entre los estudiantes, y siempre estaría abierto a responder preguntas y brindar orientación.",
+        abilities: "La inteligencia excepcional y la base de conocimientos bien redondeada de Gohan lo convertirían en un maestro versátil. Ya sea en ciencias, literatura o artes marciales, se destacaría al transmitir ideas complejas con claridad. Su capacidad para adaptarse a diferentes estilos de aprendizaje garantizaría que cada estudiante tenga la oportunidad de comprender el material, y sería especialmente hábil para identificar y fomentar las fortalezas únicas de cada estudiante."
     },
     {
         id: 6,
         name: 'Piccolo',
-        description: "Piccolo, a character from the Dragon Ball series, takes on the role of a teacher and mentor with a distinctive approach. As a Namekian warrior and one of Earth's protectors, Piccolo offers valuable guidance and martial arts training to various characters, emphasizing discipline, strength, and personal growth.",
-        classes: "Piccolo's training sessions are highly focused on developing both physical strength and mental resilience. He encourages his students to master their own weaknesses and harness their inner potential.",
+        description: "Piccolo, un personaje de la serie Dragon Ball, asume el papel de maestro y mentor con un enfoque distintivo. Como guerrero Namekiano y uno de los protectores de la Tierra, Piccolo ofrece orientación valiosa y entrenamiento de artes marciales a varios personajes, enfatizando la disciplina, la fuerza y el crecimiento personal.",
+        classes: "Las sesiones de entrenamiento de Piccolo se centran en el desarrollo tanto de la fuerza física como de la resistencia mental. Anima a sus estudiantes a dominar sus propias debilidades y aprovechar su potencial interno.",
         index: "assets/images/bola.png",
-        img: "assets/images/logo.png",
-        style: "Piccolo's teaching style is characterized by its discipline and intensity. He is a stern but fair mentor, demanding the utmost effort and dedication from his students. He believes in rigorous training and pushes his pupils to reach their full potential.",
-        abilities: " Piccolo is a formidable martial artist and strategist. He imparts his knowledge of combat techniques, such as the Special Beam Cannon and the Demon Wave, to his students. His training emphasizes precision, power, and strategic thinking in battle."
-
-    },
+        img: "assets/images/piccolo.png",
+        style: "El estilo de enseñanza de Piccolo se caracteriza por su disciplina e intensidad. Es un mentor severo pero justo, exigiendo el máximo esfuerzo y dedicación de sus estudiantes. Cree en un entrenamiento riguroso y empuja a sus pupilos a alcanzar su máximo potencial.",
+        abilities: "Piccolo es un formidable artista marcial y estratega. Imparte su conocimiento de técnicas de combate, como el Cañón Especial y la Onda Demoníaca, a sus estudiantes. Su entrenamiento enfatiza la precisión, el poder y el pensamiento estratégico en la batalla."
+    }
 
 ];

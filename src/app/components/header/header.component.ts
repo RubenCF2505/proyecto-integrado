@@ -53,7 +53,7 @@ export class HeaderComponent implements OnInit {
     style.next(
       !style.value
     );
-    console.log(style.value);
+
 
   }
 
@@ -74,7 +74,7 @@ export class HeaderComponent implements OnInit {
 
   }
   checkSize(): void {
-    if (window.innerWidth <= 1024) {
+    if (window.innerWidth <= 1025) {
       this.isMobile = true;
     }
   }

@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContainerComponent } from './components/container/container.component';
-import { TeachersComponent } from './components/teachers/teachers.component';
-import { FormComponent } from './components/form/form.component';
+import { AuthServiceService } from './auth-service.service';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { CheckListComponent } from './components/check-list/check-list.component';
+import { ContainerComponent } from './components/container/container.component';
+import { FormComponent } from './components/form/form.component';
 import { LoginComponent } from './components/login/login.component';
+import { TeachersComponent } from './components/teachers/teachers.component';
 
 const routes: Routes = [
   { path: '', component: ContainerComponent },
@@ -14,6 +16,7 @@ const routes: Routes = [
   { path: 'matriculate/:id', component: FormComponent },
   { path: "aboutUs",component:AboutUsComponent },
   { path: "login",component:LoginComponent   },
+  { path:"checkList",component:CheckListComponent, canActivate:[AuthServiceService]}
 
 ];
 

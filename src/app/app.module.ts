@@ -25,7 +25,8 @@ import { ProgressBarComponent } from './components/header/progress-bar/progress-
 import { TeachersComponent } from './components/teachers/teachers.component';
 import { LoginComponent } from './components/login/login.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import { ToggleButtonComponent } from './components/toggle-button/toggle-button.component';
+import { CheckListComponent } from './components/check-list/check-list.component';
+
 
 @NgModule({
   declarations: [
@@ -38,11 +39,13 @@ import { ToggleButtonComponent } from './components/toggle-button/toggle-button.
     InputComponent,
     AboutUsComponent,
     LoginComponent,
-    ToggleButtonComponent
+    CheckListComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+
 
     MatSlideToggleModule,
     MatSidenavModule,
