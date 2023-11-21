@@ -1,9 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, filter, map } from 'rxjs';
 import { TEACHERS } from './components/teachers/mock-teachers';
 import { CookieService } from 'ngx-cookie-service';
-import { Router } from '@angular/router';
+import { NavigationEnd, ROUTES, Router } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
+
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +14,14 @@ export class ServicesService {
   private apiUrl = 'http://localhost/api/login.php';
   private isLoggedInFlag = false;
   cookie:string
-
+  user:string
+  items = [
+    { label: 'Home', id: '' },
+    { label: 'Matriculate', id: 'matriculate' },
+    { label: 'Choose your teacher', id: 'teachers' },
+    { label: 'About us', id: 'aboutUs' },
+    { label: 'Teacher Access', id: 'login' },
+  ];
   constructor(private http: HttpClient, private cookieService: CookieService,private router:Router) {}
 
   getTeacherById(id: number): Observable<string> {
@@ -25,7 +34,7 @@ export class ServicesService {
   getImages() {
     return;
   }
-  public containerStyle = new BehaviorSubject<boolean>(false);
+  public containerStyle = new BehaviorSubject<boolean>(true);
 
   login(username: string, password: string) {
     const formData = new FormData();
@@ -33,14 +42,14 @@ export class ServicesService {
     formData.append('password', password);
 
     this.http.post(this.apiUrl, formData).subscribe((response: any) => {
-      if (response.status === 'success') {
-        localStorage.setItem('auth_token', response.token);
-        
+      if (response.status === 'success') {                
+        this.user=username
         this.cookieService.set('cookie',response.token)
         this.router.navigate(['/checkList']);
+        this.items[4].id='checkList'
+        this.items[4].label='Alumnos'
       }
-      // Handle other cases if needed
-    });
+      });
   }
 
   isLoggedIn(): string {
@@ -48,13 +57,13 @@ export class ServicesService {
   }
 
   setLoggedIn(value: boolean) {
-    // Update the isLoggedInFlag and set the cookie
-    
     this.isLoggedInFlag = value;
-
-
   }
   logout(){
     this.cookieService.delete('cookie')
   }
+  getUser(){
+    return this.user
+  }
+
 }

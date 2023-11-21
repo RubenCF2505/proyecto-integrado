@@ -8,9 +8,8 @@ import { ServicesService } from 'src/app/services.service';
 })
 export class CheckListComponent {
   constructor(private service:ServicesService){}
+  user=this.service.getUser()
   onLogout() {
-    
 this.service.logout()
-
   }
 }

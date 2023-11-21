@@ -18,7 +18,8 @@ const routes: Routes = [
   { path: "aboutUs",component:AboutUsComponent },
   { path: "login",component:LoginComponent },
   { path: "checkList",component:CheckListComponent, canActivate:[AuthServiceService]},
-  { path:"**",component:PageNotFoundComponent}
+  { path:"Page-Not-found",component:PageNotFoundComponent},
+  { path:"**",redirectTo:"Page-Not-Found"}
 
 ];
 

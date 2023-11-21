@@ -16,8 +16,7 @@ export class LoginComponent {
   constructor(private authService: ServicesService, private router: Router) {}
 
   onLogin() {
-    this.authService
-      .login(this.username, this.password)
+    this.authService.login(this.username, this.password);
   }
 
   onLogout() {
