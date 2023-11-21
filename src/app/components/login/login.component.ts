@@ -1,6 +1,7 @@
 // login.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { map } from 'rxjs';
 import { ServicesService } from 'src/app/services.service';
 
 @Component({
@@ -15,21 +16,10 @@ export class LoginComponent {
   constructor(private authService: ServicesService, private router: Router) {}
 
   onLogin() {
-    this.authService.login(this.username, this.password)
-      .subscribe(response => {
-        console.log(response);
-        
-        if (response.status === 'success') {
-          this.authService.setLoggedIn(true);
-          this.router.navigate(['/checkList']);
-        } else {
-          // Handle other cases if needed
-        }
-      }, error => {
-        console.error(error);
-        // Handle the error, e.g., show an error message to the user
-      });
+    this.authService
+      .login(this.username, this.password)
   }
+
   onLogout() {
     this.authService.setLoggedIn(false);
     // Other logout logic...

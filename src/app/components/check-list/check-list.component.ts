@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServicesService } from 'src/app/services.service';
 
 @Component({
   selector: 'app-check-list',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./check-list.component.css']
 })
 export class CheckListComponent {
+  constructor(private service:ServicesService){}
+  onLogout() {
+    
+this.service.logout()
 
+  }
 }

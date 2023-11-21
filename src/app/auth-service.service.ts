@@ -11,11 +11,13 @@ export class AuthServiceService {
 constructor(private authService: ServicesService, private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    if (this.authService.isLoggedIn()) {
+    if (this.authService.isLoggedIn().length>0) {
+      
       return true; // User is logged in, allow access to the route
     } else {
-      this.router.navigate(['/login']); // Redirect to the login page if not logged in
+      this.router.navigate(['asdas']); // Redirect to the login page if not logged in
       return false;
     }
   }
+
 }

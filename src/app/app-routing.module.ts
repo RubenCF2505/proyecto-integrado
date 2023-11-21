@@ -7,6 +7,7 @@ import { ContainerComponent } from './components/container/container.component';
 import { FormComponent } from './components/form/form.component';
 import { LoginComponent } from './components/login/login.component';
 import { TeachersComponent } from './components/teachers/teachers.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', component: ContainerComponent },
@@ -15,8 +16,9 @@ const routes: Routes = [
   { path: 'matriculate', component: FormComponent },
   { path: 'matriculate/:id', component: FormComponent },
   { path: "aboutUs",component:AboutUsComponent },
-  { path: "login",component:LoginComponent   },
-  { path:"checkList",component:CheckListComponent, canActivate:[AuthServiceService]}
+  { path: "login",component:LoginComponent },
+  { path: "checkList",component:CheckListComponent, canActivate:[AuthServiceService]},
+  { path:"**",component:PageNotFoundComponent}
 
 ];
 

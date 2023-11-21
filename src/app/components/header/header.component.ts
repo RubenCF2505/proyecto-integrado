@@ -37,6 +37,10 @@ export class HeaderComponent implements OnInit {
       { label: 'About us', id: 'aboutUs' },
       { label: 'Teacher Access', id: 'login' },
     ];
+ if(this.service.isLoggedIn().length>0){
+  this.items[4].id='checkList'
+  
+ }
     this.checkSize();
 
   }

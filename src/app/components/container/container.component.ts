@@ -13,7 +13,7 @@ export class ContainerComponent {
   ngOnInit(): void {
     
     const image = document.getElementsByClassName("sunset");
-    new simpleParallax(image,{scale:1.3});
+    new simpleParallax(image);
   
   }
 }

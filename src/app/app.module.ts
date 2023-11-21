@@ -1,13 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-
 import { MatSidenavModule } from '@angular/material/sidenav';
-
-// For dynamic progressbar demo
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -24,9 +20,8 @@ import { InputComponent } from './components/form/input/input.component';
 import { ProgressBarComponent } from './components/header/progress-bar/progress-bar.component';
 import { TeachersComponent } from './components/teachers/teachers.component';
 import { LoginComponent } from './components/login/login.component';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CheckListComponent } from './components/check-list/check-list.component';
-
 
 @NgModule({
   declarations: [
@@ -40,13 +35,10 @@ import { CheckListComponent } from './components/check-list/check-list.component
     AboutUsComponent,
     LoginComponent,
     CheckListComponent,
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
-
     MatSlideToggleModule,
     MatSidenavModule,
     MatProgressBarModule,
@@ -57,15 +49,11 @@ import { CheckListComponent } from './components/check-list/check-list.component
     BrowserAnimationsModule,
     MatSelectModule,
     MatIconModule,
-
     HttpClientModule,
     FormsModule,
-
   ],
-
 
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
-
+export class AppModule {}

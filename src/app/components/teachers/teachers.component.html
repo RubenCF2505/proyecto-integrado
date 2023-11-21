@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="p-2 dark:bg-gray-800 dark:text-gray-300">
   <div
     *ngFor="let item of teachers; let i = index"
@@ -8,7 +9,7 @@
       <div
         class="bg mr-2 lg:w-44 lg:h-44 border-2 w-20  border-black float-left relative rounded-full"
       >
-        <div class="w-20 absolute rounded-full right-2 bottom-2 z-50">
+        <div class="w-20 absolute rounded-full right-2 bottom-2 z-20">
           <img [src]="item.index" alt="" class="" />
         </div>
         <div
