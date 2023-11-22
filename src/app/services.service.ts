@@ -1,10 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, filter, map } from 'rxjs';
-import { TEACHERS } from './components/teachers/mock-teachers';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { NavigationEnd, ROUTES, Router } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { TEACHERS } from './components/teachers/mock-teachers';
 
 
 @Injectable({
@@ -16,7 +15,7 @@ export class ServicesService {
   cookie:string
   user:string
   items = [
-    { label: 'Home', id: '' },
+    { label: 'Home', id: 'home' },
     { label: 'Matriculate', id: 'matriculate' },
     { label: 'Choose your teacher', id: 'teachers' },
     { label: 'About us', id: 'aboutUs' },
