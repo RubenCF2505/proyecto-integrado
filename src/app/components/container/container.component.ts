@@ -17,21 +17,11 @@ export class ContainerComponent {
     { imagen: '/assets/images/img1.gif', titulo: 'Estudio', texto: 'Para entrenar el cuerpo antes hay que entrenar la mente' },
     { imagen: '/assets/images/img2.gif', titulo: 'Compañerismo', texto: 'No hay mayor fuerza que el compañerismo y la amistad' },
   ];
-  teachers:Teacher[]=TEACHERS.splice(0,TEACHERS.length-2)
+ 
   text: string = 'Calienta antes de entrenar';
   ngOnInit(): void {
     const image = document.getElementsByClassName('sunset');
     new simpleParallax(image);
-  }
-  divHeight: number = 80; // Initial height in pixels
-  expanded: boolean = false;
-  maxHeight: number = 400; // Max height for the div
-
-  toggleHeight(id:number): void {
-   console.log(id);
-    
-    
-   
   }
 
 }
