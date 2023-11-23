@@ -17,9 +17,9 @@ const routes: Routes = [
   { path: 'matriculate/:id', component: FormComponent },
   { path: "aboutUs",component:AboutUsComponent },
   { path: "login",component:LoginComponent },
-  { path: "checkList",component:CheckListComponent, canActivate:[AuthServiceService]},
+  { path: "checkList",component:CheckListComponent, },
   { path:"**",component:PageNotFoundComponent},
-
+  // canActivate:[AuthServiceService]
 ];
 
 @NgModule({

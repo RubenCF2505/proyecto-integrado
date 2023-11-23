@@ -11,7 +11,6 @@ import { TEACHERS } from './components/teachers/mock-teachers';
 })
 export class ServicesService {
   private apiUrl = 'http://localhost/api/login.php';
-  private isLoggedInFlag = false;
   cookie:string
   user:string
   items = [
@@ -53,10 +52,6 @@ export class ServicesService {
 
   isLoggedIn(): string {
     return this.cookieService.get('cookie')
-  }
-
-  setLoggedIn(value: boolean) {
-    this.isLoggedInFlag = value;
   }
   logout(){
     this.cookieService.delete('cookie')

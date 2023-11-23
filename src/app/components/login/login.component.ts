@@ -19,8 +19,5 @@ export class LoginComponent {
     this.authService.login(this.username, this.password);
   }
 
-  onLogout() {
-    this.authService.setLoggedIn(false);
-    // Other logout logic...
-  }
+ 
 }
