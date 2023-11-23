@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ServicesService } from './services.service';
-import { ActivatedRoute } from '@angular/router';
-
+import { ActivatedRoute, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +8,16 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-
-  constructor(public service:ServicesService, private route:ActivatedRoute) {
-    
-  }
+  constructor(public service: ServicesService, private route: ActivatedRoute) {}
   title = 'proyecto';
-  aaa:string;
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    console.log(this.route.snapshot.url);
-    
+  hideHeader = false;
+
+  ngOnInit() {
+    this.service.hideHeaderOnSpecificRoute().subscribe((event: any) => {
+      if (event instanceof NavigationEnd) {
+        // Check the current route and hide the header if needed
+        this.hideHeader = event.urlAfterRedirects === '/NotFound';
+      }
+    });
   }
 }

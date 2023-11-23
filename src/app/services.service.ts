@@ -1,18 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, filter } from 'rxjs';
 import { TEACHERS } from './components/teachers/mock-teachers';
-
 
 @Injectable({
   providedIn: 'root',
 })
 export class ServicesService {
   private apiUrl = 'http://localhost/api/login.php';
-  cookie:string
-  user:string
+  cookie: string;
+  user: string;
   items = [
     { label: 'Home', id: 'home' },
     { label: 'Matriculate', id: 'matriculate' },
@@ -20,7 +19,11 @@ export class ServicesService {
     { label: 'About us', id: 'aboutUs' },
     { label: 'Teacher Access', id: 'login' },
   ];
-  constructor(private http: HttpClient, private cookieService: CookieService,private router:Router) {}
+  constructor(
+    private http: HttpClient,
+    private cookieService: CookieService,
+    private router: Router
+  ) {}
 
   getTeacherById(id: number): Observable<string> {
     const url = `/matriculate/${id}`;
@@ -40,24 +43,28 @@ export class ServicesService {
     formData.append('password', password);
 
     this.http.post(this.apiUrl, formData).subscribe((response: any) => {
-      if (response.status === 'success') {                
-        this.user=username
-        this.cookieService.set('cookie',response.token)
+      if (response.status === 'success') {
+        this.user = username;
+        this.cookieService.set('cookie', response.token);
         this.router.navigate(['/checkList']);
-        this.items[4].id='checkList'
-        this.items[4].label='Alumnos'
+        this.items[4].id = 'checkList';
+        this.items[4].label = 'Alumnos';
       }
-      });
+    });
   }
-
+  hideHeaderOnSpecificRoute() {
+    return this.router.events.pipe(
+      filter((event) => event instanceof NavigationEnd)
+    );
+  }
+  
   isLoggedIn(): string {
-    return this.cookieService.get('cookie')
+    return this.cookieService.get('cookie');
   }
-  logout(){
-    this.cookieService.delete('cookie')
+  logout() {
+    this.cookieService.delete('cookie');
   }
-  getUser(){
-    return this.user
+  getUser() {
+    return this.user;
   }
-
 }
