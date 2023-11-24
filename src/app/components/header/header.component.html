@@ -32,8 +32,23 @@
           <button (click)="toggleMobileMenu()" class="lg:mr-10 mr-5 text-4xl">
             ☰
           </button>
+          <div *ngIf="service.isLoggedIn()">
+            <button (click)="service.logout()" routerLink="home">
+              <img *ngIf="service.containerStyle.value==true"
+                src="../../../assets/images/logout.png"
+                class="w-8 mt-2 mr-2"
+                matTooltip="Info about the action"
+                aria-label="Button that displays a tooltip when focused or hovered over"
+              />
+              <img *ngIf="service.containerStyle.value==false"
+              src="../../../assets/images/logout_56805.png  "
+              class="w-8 mt-2 mr-2"
+              matTooltip="Info about the action"
+              aria-label="Button that displays a tooltip when focused or hovered over"
+            />
+            </button>
+          </div>
         </div>
-        <div></div>
       </div>
       <div
         *ngIf="mobileMenuOpen"
@@ -58,10 +73,26 @@
           >
             {{ item.label }}
           </a>
+          <div *ngIf="service.isLoggedIn()" class="">
+            <button (click)="service.logout()" routerLink="home">
+              <img *ngIf="service.containerStyle.value==true"
+              src="../../../assets/images/logout.png"
+              class="w-8 "
+              matTooltip="Info about the action"
+              aria-label="Button that displays a tooltip when focused or hovered over"
+            />
+            <img *ngIf="service.containerStyle.value==false"
+            src="../../../assets/images/logout_56805.png  "
+            class="w-8 "
+            matTooltip="Info about the action"
+            aria-label="Button that displays a tooltip when focused or hovered over"
+          />
+            </button>
+          </div>
         </nav>
+
         <div class="sm:float-right hidden lg:block mx-4 -mt-3 mb-2"></div>
       </div>
-      
     </div>
   </div>
 

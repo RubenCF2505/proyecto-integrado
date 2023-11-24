@@ -1,5 +1,10 @@
-<div class="h-screen  dark:bg-gray-800 margin">
-  <form class="p-6  dark:bg-gray-800 dark:text-gray-300 m-0" [formGroup]="form">
+
+<div class="h-screen  dark:bg-gray-800 ">
+  <header class="bg-blue-500 p-4 text-gray-50 text-center">
+    <h1 class="text-3xl font-bold">Escuela Tortuga</h1>
+    <p class="mt-2">¡Donde comienza la aventura de Dragon Ball!</p>
+  </header>
+  <form class="p-6  dark:bg-gray-800 dark:text-gray-300  margin" [formGroup]="form">
     <div class="grid pb-1 text-sm">
       <h2 class="mt-2">Personal Data</h2>
     </div>
@@ -101,7 +106,7 @@
             placeholder="Granada"
           >
             <option value="0">Select your city</option>
-            <option *ngFor="let item of ciudades" [value]="item.code">
+            <option *ngFor="let item of ciudades" [value]="item.label">
               {{ item.label }}
             </option>
           </select>
@@ -190,6 +195,7 @@
     <button
       type="submit"
       class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      (click)="onSubmit()"
     >
       Submit
     </button>
