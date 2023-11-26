@@ -33,26 +33,26 @@ export class FormComponent {
   ) {}
 
   form = this.formBuilder.group({
-    firstName: ['', [, Validadores.validateNames]],
-    surName: ['', [, Validadores.validateNames]],
-    nif: ['', []],
-    birthDate: ['', []],
-    phone: ['', []],
+    firstName: ['', [Validators.required, Validadores.validateNames]],
+    surName: ['', [Validators.required, Validadores.validateNames]],
+    nif: ['', [Validators.required]],
+    birthDate: ['', [Validators.required]],
+    phone: ['', [Validators.required]],
 
-    email: ['', [, Validators.email]],
+    email: ['', [Validators.required, Validators.email]],
     place: this.formBuilder.group({
-      AC: ['', []],
-      district: [{ value: '', disabled: true }, []],
-      city: [{ value: '', disabled: true }, []],
+      AC: ['', [Validators.required]],
+      district: [{ value: '', disabled: true }, [Validators.required]],
+      city: [{ value: '', disabled: true }, [Validators.required]],
     }),
     address: this.formBuilder.group({
-      st: ['', []],
-      number: ['', [, Validadores.isNumber()]],
-      PC: ['', [, Validadores.checkNumberLength(), Validadores.isNumber()]],
+      st: ['', [Validators.required]],
+      number: ['', [Validators.required, Validadores.isNumber()]],
+      PC: ['', [Validators.required, Validadores.checkNumberLength(), Validadores.isNumber()]],
       floor: [''],
       letter: [''],
     }),
-    teacher: [''],
+    teacher: ['',[Validators.required]],
   });
   addressFormGroup = this.form.get('address') as FormGroup;
 

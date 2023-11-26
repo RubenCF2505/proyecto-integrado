@@ -1,15 +1,17 @@
-
-<div class="h-screen  dark:bg-gray-800 ">
+<div class="h-screen dark:bg-gray-800">
   <header class="bg-blue-500 p-4 text-gray-50 text-center">
     <h1 class="text-3xl font-bold">Escuela Tortuga</h1>
     <p class="mt-2">¡Donde comienza la aventura de Dragon Ball!</p>
   </header>
-  <form class="p-6  dark:bg-gray-800 dark:text-gray-300  margin" [formGroup]="form">
+  <form
+    class="p-6 dark:bg-gray-800 dark:text-gray-300 margin"
+    [formGroup]="form"
+  >
     <div class="grid pb-1 text-sm">
       <h2 class="mt-2">Personal Data</h2>
     </div>
     <!--NAME-->
-    <div class="grid gap-6 pb-3 md:grid-cols-2 border-t">
+    <div class="grid gap-6 py-3 md:grid-cols-2 border-t">
       <app-input
         [form]="form"
         label="First Name"
@@ -65,7 +67,7 @@
         <!--AUTONOMOUS COMMUNITY-->
 
         <div class="mb-6">
-          <mat-label>Autonomous Community</mat-label>
+          <label>Autonomous Community</label>
           <!-- <input type="text" placeholder="Andalucía" list="list" /> -->
           <select
             id="list"
@@ -82,7 +84,7 @@
         <!--DISTRICT-->
 
         <div class="mb-6">
-          <mat-label>District</mat-label>
+          <label>District</label>
           <select
             id="street"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -98,7 +100,7 @@
         <!--CITY-->
 
         <div class="mb-6">
-          <mat-label>City</mat-label>
+          <label>City</label>
           <select
             id="street"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
