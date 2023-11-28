@@ -14,7 +14,7 @@
     <div class="grid gap-6 py-3 md:grid-cols-2 border-t">
       <app-input
         [form]="form"
-        label="First Name"
+        label="Nombre*"
         controlName="firstName"
       ></app-input>
 
@@ -22,7 +22,7 @@
       <app-input
         type="text"
         [form]="form"
-        label="Surname"
+        label="Apellido"
         controlName="surName"
       ></app-input>
     </div>
@@ -30,7 +30,7 @@
     <div class="grid gap-6 md:grid-cols-12">
       <!--NIF-->
       <div class="md:col-span-4">
-        <app-input type="text" [form]="form" label="NIF" controlName="nif">
+        <app-input type="text" [form]="form" label="DNI*" controlName="nif">
         </app-input>
       </div>
 
@@ -38,7 +38,7 @@
       <div class="mb-3 md:col-span-4">
         <app-input
           [form]="form"
-          label="Birth date"
+          label="Fecha De Nacimiento*"
           type="date"
           controlName="birthDate"
         ></app-input>
@@ -47,13 +47,13 @@
       <div class="md:col-span-4">
         <app-input
           [form]="form"
-          label="Phone Number"
+          label="Teléfono*"
           type="text"
           controlName="phone"
         ></app-input>
       </div>
       <div class="md:col-span-12 mb-2">
-        <app-input [form]="form" type="text" label="Email" controlName="email">
+        <app-input [form]="form" type="text" label="Email*" controlName="email">
         </app-input>
       </div>
     </div>
@@ -67,7 +67,7 @@
         <!--AUTONOMOUS COMMUNITY-->
 
         <div class="mb-6">
-          <label>Autonomous Community</label>
+          <label>Comunidad Autónoma</label>
           <!-- <input type="text" placeholder="Andalucía" list="list" /> -->
           <select
             id="list"
@@ -75,8 +75,8 @@
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             id="AC"
           >
-            <option value="0">Select your Comunnity</option>
-            <option *ngFor="let item of community" [value]="item.code">
+            <option value="0">Selecciona tu comunidad autónoma</option>
+            <option *ngFor="let item of COMMUNITY" [value]="item.code">
               {{ item.label }}
             </option>
           </select>
@@ -84,14 +84,14 @@
         <!--DISTRICT-->
 
         <div class="mb-6">
-          <label>District</label>
+          <label>Provincia</label>
           <select
             id="street"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             formControlName="district"
             placeholder="Granada"
           >
-            <option value="0">Select your district</option>
+            <option value="0">Selecciona tu provincia</option>
             <option *ngFor="let item of provincias" [value]="item.code">
               {{ item.label }}
             </option>
@@ -100,14 +100,14 @@
         <!--CITY-->
 
         <div class="mb-6">
-          <label>City</label>
+          <label>Ciudad</label>
           <select
             id="street"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             formControlName="city"
             placeholder="Granada"
           >
-            <option value="0">Select your city</option>
+            <option value="0">Selecciona tu ciudad</option>
             <option *ngFor="let item of ciudades" [value]="item.label">
               {{ item.label }}
             </option>
@@ -120,7 +120,7 @@
         <div class="col-span-2">
           <app-input
             [form]="addressFormGroup"
-            label="Street"
+            label="Calle*"
             controlName="st"
           ></app-input>
         </div>
@@ -129,7 +129,7 @@
         <div class="mb-6">
           <app-input
             [form]="addressFormGroup"
-            label="Number"
+            label="Número*"
             controlName="number"
           ></app-input>
         </div>
@@ -137,7 +137,7 @@
           <!--FLOOR-->
           <app-input
             [form]="addressFormGroup"
-            label="Floor"
+            label="Piso"
             controlName="floor"
           ></app-input>
         </div>
@@ -146,14 +146,14 @@
         <div class="mb-6">
           <app-input
             [form]="addressFormGroup"
-            label="Letter"
+            label="Letra"
             controlName="letter"
           ></app-input>
         </div>
         <div class="mb-6">
           <app-input
             [form]="addressFormGroup"
-            label="Codigo postal"
+            label="Codigo postal*"
             controlName="PC"
           ></app-input>
         </div>
@@ -163,7 +163,7 @@
     <label
       for="teacher"
       class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-      >Your Teacher</label
+      >Tu profesor</label
     >
     <div class="mb-6 grid md:grid-cols-6 float-left w-6/12">
       <select
@@ -187,9 +187,9 @@
         <button
           routerLink="/matriculate"
           (click)="setId()"
-          class="bg-gray-400 my-4 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          class="bg-gray-500 my-4 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
-          Change teacher
+          Cambiar profesor
         </button>
       </div>
     </div>

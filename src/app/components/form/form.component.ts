@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import * as CCAA from 'ccaa.json';
 import * as CITIES from 'poblaciones.json';
@@ -19,7 +23,7 @@ export class FormComponent {
   Id = false;
   teacherId = -1;
   teachers = TEACHERS;
-  community = JSON.parse(JSON.stringify(CCAA)).default;
+  COMMUNITY = JSON.parse(JSON.stringify(CCAA)).default;
   DISTRICTS = JSON.parse(JSON.stringify(DISTRICTS)).default;
   CITIES = JSON.parse(JSON.stringify(CITIES)).default;
   provincias: DataList[] = [];
@@ -48,12 +52,21 @@ export class FormComponent {
     address: this.formBuilder.group({
       st: ['', [Validators.required]],
       number: ['', [Validators.required, Validadores.isNumber()]],
-      PC: ['', [Validators.required, Validadores.checkNumberLength(), Validadores.isNumber()]],
+      PC: [
+        '',
+        [
+          Validators.required,
+          Validadores.checkNumberLength(),
+          Validadores.isNumber(),
+        ],
+      ],
       floor: [''],
       letter: [''],
     }),
-    teacher: ['',[Validators.required]],
+    teacher: ['', [Validators.required]],
   });
+  AcControl = this.form.get('place')?.get('AC') as FormControl;
+  PvControl= this.form.get('place')?.get('district') as FormControl;
   addressFormGroup = this.form.get('address') as FormGroup;
 
   ngOnInit(): void {
@@ -121,11 +134,22 @@ export class FormComponent {
   }
 
   onSubmit() {
-    if (this.form.valid) {
-      this.service.saveFormData(this.form.value).subscribe((response) => {
-        console.log('Form data saved successfully:', response);
-        // Handle success as needed
-      });
-    }
+    this.changeData(this.AcControl, this.COMMUNITY);
+    this.changeData(this.PvControl,this.DISTRICTS)
+
+    this.service.saveFormData(this.form.value).subscribe((response) => {
+      console.log('Form data saved successfully:', response);
+      // Handle success as needed
+    });
   }
-}
+  changeData(control: FormControl, dataList: any[]) {
+    var label: string = '';
+
+    dataList.map((value: DataList) =>
+      value.code == control.value ? (label = value.label) : value.code
+    );
+    console.log(label);
+
+    control.setValue(label);
+  }
+} 
