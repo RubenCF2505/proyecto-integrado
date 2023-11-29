@@ -15,7 +15,7 @@ constructor(private authService: ServicesService, private router: Router) {}
       
       return true; // User is logged in, allow access to the route
     } else {
-      this.router.navigate([""]); // Redirect to the login page if not logged in
+      this.router.navigate(["/NotFound"]); // Redirect to the login page if not logged in
       return false;
     }
   }

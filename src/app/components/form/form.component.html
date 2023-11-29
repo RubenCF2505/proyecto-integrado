@@ -1,15 +1,14 @@
-<div class="h-screen dark:bg-gray-800">
-  <header class="bg-blue-500 p-4 text-gray-50 text-center">
-    <h1 class="text-3xl font-bold">Escuela Tortuga</h1>
-    <p class="mt-2">¡Donde comienza la aventura de Dragon Ball!</p>
-  </header>
+<div class="h-screen dark:bg-gray-800 mt-28">
+  
   <form
     class="p-6 dark:bg-gray-800 dark:text-gray-300 margin"
     [formGroup]="form"
   >
     <div class="grid pb-1 text-sm">
-      <h2 class="mt-2">Personal Data</h2>
+      <h2 class="mt-2 text-xl">Personal Data</h2>
     </div>
+
+
     <!--NAME-->
     <div class="grid gap-6 py-3 md:grid-cols-2 border-t">
       <app-input
@@ -193,10 +192,10 @@
         </button>
       </div>
     </div>
-    <div class="image" id="img"></div>
+
     <button
       type="submit"
-      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      class="text-white block bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       (click)="onSubmit()"
     >
       Submit

@@ -71,11 +71,9 @@ export class FormComponent {
 
   ngOnInit(): void {
     this.setDistrict();
-
     this.setCity();
-
     this.getTeacher();
-    this.showImage();
+    
   }
   setDistrict() {
     this.form.get('place.AC')!.valueChanges.subscribe((x) => {
@@ -142,13 +140,12 @@ export class FormComponent {
       // Handle success as needed
     });
   }
-  changeData(control: FormControl, dataList: any[]) {
+  changeData(control: FormControl, dataList: DataList[]) {
     var label: string = '';
 
     dataList.map((value: DataList) =>
-      value.code == control.value ? (label = value.label) : value.code
+      value.code == control.value ? label = value.label : null
     );
-    console.log(label);
 
     control.setValue(label);
   }

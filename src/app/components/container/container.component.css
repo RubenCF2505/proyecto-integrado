@@ -24,9 +24,7 @@ body {
 .contenedor {
   background-image: url("/assets/images/img2.gif");
 }
-.image {
-  background-image: url("../../../assets/images/fondo1.jpg");
-}
+
 .rockSalt {
   font-family: "Rock Salt", cursive;
 }
