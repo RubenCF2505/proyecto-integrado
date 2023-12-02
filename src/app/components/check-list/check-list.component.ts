@@ -19,6 +19,7 @@ export class CheckListComponent {
     this.service.getStudents().subscribe((data: any) => {
       this.service.students = data;
       this.keys = Object.keys(data[0]);
+      this.keys.push("")
 
       data.forEach((element:any)=>{
  //element es lo que hay que pasar a array
