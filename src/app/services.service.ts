@@ -4,6 +4,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { BehaviorSubject, Observable, filter } from 'rxjs';
 import { TEACHERS } from './components/teachers/mock-teachers';
+import { AbstractControl, FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -18,6 +19,7 @@ export class ServicesService {
     { label: 'Choose your teacher', id: 'teachers' },
     { label: 'About us', id: 'aboutUs' },
   ];
+  trueValues: string[];
   students: any[] = [];
   constructor(
     private http: HttpClient,
@@ -30,6 +32,7 @@ export class ServicesService {
       this.items.push({ label: 'Teacher Access', id: 'login' });
     }
   }
+ 
 
   getTeacherById(id: number): Observable<string> {
     const url = `/matriculate/${id}`;
@@ -61,10 +64,12 @@ export class ServicesService {
       });
   }
 
+  deleteData(values: any) {
+    return this.http.post(`${this.apiUrl}delete.php`, values)
+  }
   saveFormData(formData: any): Observable<any> {
-    this.students.push(formData)
-    console.log(this.students);
-    
+    this.students.push(formData);
+
     return this.http.post(`${this.apiUrl}add.php  `, formData);
   }
 
@@ -86,7 +91,6 @@ export class ServicesService {
     return this.user;
   }
   getStudents() {
-
     return this.http.get(`${this.apiUrl}search.php`);
   }
 }
