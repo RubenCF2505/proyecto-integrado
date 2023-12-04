@@ -4,6 +4,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { BehaviorSubject, Observable, filter } from 'rxjs';
 import { TEACHERS } from './components/teachers/mock-teachers';
+import { AbstractControl, FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -18,6 +19,7 @@ export class ServicesService {
     { label: 'Choose your teacher', id: 'teachers' },
     { label: 'About us', id: 'aboutUs' },
   ];
+  trueValues: string[];
   students: any[] = [];
   constructor(
     private http: HttpClient,
@@ -29,6 +31,21 @@ export class ServicesService {
     } else {
       this.items.push({ label: 'Teacher Access', id: 'login' });
     }
+  }
+  checkValue(form: FormGroup) {
+    const trueValues: string[] = [];
+
+    // Loop through each control in the form group
+    Object.keys(form.controls).forEach((key) => {
+      const control: AbstractControl | null = form.get(key);
+
+      // Check if the control exists and its value is true
+      if (control && control.value === true) {
+        trueValues.push(key);
+      }
+    });
+
+    this.trueValues = trueValues;
   }
 
   getTeacherById(id: number): Observable<string> {
@@ -61,10 +78,14 @@ export class ServicesService {
       });
   }
 
+  deleteData() {
+    this.http.post(`${this.apiUrl}delete.php`, this.trueValues).subscribe((response) => {
+      console.log(response);
+    });
+  }
   saveFormData(formData: any): Observable<any> {
-    this.students.push(formData)
-    console.log(this.students);
-    
+    this.students.push(formData);
+
     return this.http.post(`${this.apiUrl}add.php  `, formData);
   }
 
@@ -86,7 +107,6 @@ export class ServicesService {
     return this.user;
   }
   getStudents() {
-
     return this.http.get(`${this.apiUrl}search.php`);
   }
 }
