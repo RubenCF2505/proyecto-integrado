@@ -13,6 +13,7 @@ export class CheckListComponent {
   selectedItemId: number | null = null; // Initialize as null or any default value
   savedStudents: any[] = [];
   keys: string[] = [];
+  showedStudents:string[]=[]
   ngOnInit() {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
@@ -27,6 +28,7 @@ export class CheckListComponent {
       
       })
     });
+    this.showedStudents=this.savedStudents
   }
 
 
@@ -36,7 +38,11 @@ export class CheckListComponent {
   // Listar con el nuevo order
 
   // Call the function to get the sorted array
-
+  find(item: number) {
+    
+    this.showedStudents = this.savedStudents.filter(arr => arr[14].includes(item));
+    
+  }
   sortObject(inputObject: any, order: string[]): any {
     const sortedObject: any = {};
     order.forEach((key) => {
@@ -48,8 +54,10 @@ export class CheckListComponent {
   }
   // Function to handle item click
   handleItemClick(itemId: number) {
+    this.find(itemId)
     this.selectedItemId = itemId; // Set the selected item ID when clicked
   }
+  
   onLogout() {
     this.service.logout();
   }

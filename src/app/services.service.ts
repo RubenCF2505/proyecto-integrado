@@ -62,6 +62,9 @@ export class ServicesService {
   }
 
   saveFormData(formData: any): Observable<any> {
+    this.students.push(formData)
+    console.log(this.students);
+    
     return this.http.post(`${this.apiUrl}add.php  `, formData);
   }
 
@@ -83,6 +86,7 @@ export class ServicesService {
     return this.user;
   }
   getStudents() {
+
     return this.http.get(`${this.apiUrl}search.php`);
   }
 }
