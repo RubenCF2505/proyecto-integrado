@@ -18,6 +18,7 @@ export class ServicesService {
     { label: 'Choose your teacher', id: 'teachers' },
     { label: 'About us', id: 'aboutUs' },
   ];
+  students: any[] = [];
   constructor(
     private http: HttpClient,
     private cookieService: CookieService,
@@ -29,8 +30,6 @@ export class ServicesService {
       this.items.push({ label: 'Teacher Access', id: 'login' });
     }
   }
-
-
 
   getTeacherById(id: number): Observable<string> {
     const url = `/matriculate/${id}`;
@@ -49,22 +48,26 @@ export class ServicesService {
     formData.append('username', username);
     formData.append('password', password);
 
-    this.http.post(this.apiUrl+'login.php', formData).subscribe((response: any) => {
-      if (response.status === 'success') {
-        this.user = username;
-        this.cookieService.set('cookie', response.token);
-        this.router.navigate(['/checkList']);
-        this.items[4].id = 'checkList';
-        this.items[4].label = 'Alumnos';
-      }
-    });
+    this.http
+      .post(this.apiUrl + 'login.php', formData)
+      .subscribe((response: any) => {
+        if (response.status === 'success') {
+          this.user = username;
+          this.cookieService.set('cookie', response.token);
+          this.router.navigate(['/checkList']);
+          this.items[4].id = 'checkList';
+          this.items[4].label = 'Alumnos';
+        }
+      });
   }
-
 
   saveFormData(formData: any): Observable<any> {
+    this.students.push(formData)
+    console.log(this.students);
+    
     return this.http.post(`${this.apiUrl}add.php  `, formData);
   }
-  
+
   hideHeaderOnSpecificRoute() {
     return this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
@@ -76,10 +79,14 @@ export class ServicesService {
   }
   logout() {
     this.cookieService.delete('cookie');
-    this.items[4].label="Teacher Access"
-    this.items[4].id="login"
+    this.items[4].label = 'Teacher Access';
+    this.items[4].id = 'login';
   }
   getUser() {
     return this.user;
+  }
+  getStudents() {
+
+    return this.http.get(`${this.apiUrl}search.php`);
   }
 }

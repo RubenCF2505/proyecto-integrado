@@ -1,6 +1,6 @@
-<div class="bg-gray-200 h-screen ">
-  <div class="mx-auto ">
-    <div class="grid grid-cols-12 gap-4 h-screen ">
+<div class="flex altura mt-28">
+  <as-split direction="horizontal" gutterSize="10" class="flex-1 ">
+    <as-split-area [size]="15" order="1" class="sm:max-w-sm sm:min-w-min min-w-min max-w-min">
       <nav class="col-span-4 md:col-span-2 py-40 border-r-2 h-full border-gray-600 bg-gray-600 flex items-center">
         <!-- Vertical Navigation Menu -->
         <div class="flex flex-col first:border-t w-full">
@@ -16,26 +16,33 @@
           </div>
         </div>
       </nav>
-      
-      <div class="md:col-span-10 col-span-8">
-        <!-- Table -->
-        <table class="w-full bg-white rounded-lg shadow-md">
-          <thead>
-            <tr>
-              <th class="py-2 px-4 bg-gray-100">Column 1</th>
-              <th class="py-2 px-4 bg-gray-100">Column 2</th>
-              <!-- Add more table headers if required -->
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="py-2 px-4">Data 1</td>
-              <td class="py-2 px-4">Data 2</td>
-              <!-- Add more table data rows as needed -->
-            </tr>
-          </tbody>
-        </table>
+    </as-split-area>
+    <as-split-area order="2">
+      <!-- Main content goes here -->
+      <div class="bg-gray-300 p-4 flex-1" >
+        <div class="overflow-x-auto">
+          <table class="w-full bg-white rounded-lg shadow-md">
+            <thead>
+              <tr>
+                <!-- Header Row -->
+                <th *ngFor="let header of keys" class="py-2  text-xs bg-gray-100">
+                  {{ header | titlecase }}
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <!-- Data Rows -->
+              <tr *ngFor="let item of showedStudents" class="hover:bg-gray-50">
+                
+                <td *ngFor="let cell of item" class="py-2 px-1 text-center">
+                  {{ cell }}
+                </td>
+                <td> <input type="checkbox" name="" id=""></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
-  </div>
+    </as-split-area>
+  </as-split>
 </div>

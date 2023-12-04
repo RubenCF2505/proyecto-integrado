@@ -22,6 +22,8 @@ import { TeachersComponent } from './components/teachers/teachers.component';
 import { LoginComponent } from './components/login/login.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CheckListComponent } from './components/check-list/check-list.component';
+import { AngularSplitModule } from 'angular-split';
+
 
 @NgModule({
   declarations: [
@@ -51,6 +53,7 @@ import { CheckListComponent } from './components/check-list/check-list.component
     MatIconModule,
     HttpClientModule,
     FormsModule,
+    AngularSplitModule,
   ],
 
   providers: [],
