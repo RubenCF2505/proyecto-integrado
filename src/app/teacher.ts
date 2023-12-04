@@ -6,5 +6,6 @@ export interface Teacher {
   index:string,
   img: string,
   style:string,
-  abilities:string
+  abilities:string,
+  isSmallHeight:boolean
 }

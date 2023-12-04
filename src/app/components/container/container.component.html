@@ -55,15 +55,15 @@
           <p>Esos son los fundamentos de la Escuela Tortuga</p>
         </div>
 
-        <section
-          class="grid grid-cols-1 lg:grid-cols-3 xl:gap-8 gap-4 text-center"
+        <section  
+          class="grid grid-cols-1 md:grid-cols-3 xl:gap-8 gap-2 text-center"
         >
           <div
-            class="bg-white dark:bg-gray-700 w-full hover:bg-slate-100 p-6 rounded-lg shadow-md border-amber-500 hover:border-2"
+            class="bg-white dark:bg-gray-700 w-full hover:bg-slate-100 p-6 rounded-lg shadow-md border-amber-500 border"
             *ngFor="let item of images"
           >
-            <div class="rounded-md bg-cover bg-no-repeat h-80 w-auto bg-center">
-              <img [src]="item.imagen" class="h-80 w-full rounded-md" />
+            <div class="rounded-md bg-cover bg-no-repeat xl:h-80 h-40 w-auto bg-center">
+              <img [src]="item.imagen" class="xl:h-80 h-40 w-full rounded-md" />
             </div>
             <h2
               href="#"
@@ -80,47 +80,35 @@
 
     <section>
       <div class="dark:bg-orange-200 dark:text-gray-950 bg-gray-600 text-gray-50">
-        <div class="flex flex-col md:flex-row">
+        <div class="flex flex-col xl:flex-row">
           <!-- First Responsive Div -->
-          <div class="md:w-1/2 p-4">
-            <div class="lg:w-1/2 flex-grow">
-              <div class="lg:col-span-6 flex h-full">
+          <div class="xl:w-1/2 p-4">
+            <div class="lg:w-5/6 flex-grow">
+              <div class="xl:col-span-6 flex h-96">
                 <div class="lg:col-span-1 container p-10">
                   <h1 class="dark:text-orange-800 text-orange-500 text-2xl">
                     <span
                       class="inline-block w-8 h-8 mr-2 bg-cover bg-center"
-                      style="
-                        background-image: url('../../../assets/images/logo.png');
-                      "
+                      style="background-image: url('../../../assets/images/logo.png');"
                     ></span>
                     ¡Atención futuros Guerreros Z!
                     <span
                       class="inline-block w-8 h-8 mr-2 bg-cover bg-center"
-                      style="
-                        background-image: url('../../../assets/images/bola.png');
-                      "
+                      style="background-image: url('../../../assets/images/bola.png');"
                     ></span>
                   </h1>
                   <div class="text-2xl font-bold mb-4">
-                    ¡Amantes de las artes marciales, únanse a la Escuela
-                    Tortuga!
+                    ¡Amantes de las artes marciales, únanse a la Escuela Tortuga!
                   </div>
                   <div class="mb-4">
-                    En la <span class="font-semibold">Academia Tortuga</span>,
-                    aprenderás técnicas clásicas como el
-                    <span class="italic">Kamehameha</span> y el
-                    <span class="italic">Puño del Dragón</span> con el sabio
-                    <span class="font-semibold">Maestro Roshi</span>.
+                    En la <span class="font-semibold">Academia Tortuga</span>, aprenderás técnicas clásicas como el <span class="italic">Kamehameha</span> y el <span class="italic">Puño del Dragón</span> con el sabio <span class="font-semibold">Maestro Roshi</span>.
                   </div>
                   <div class="mb-4">
-                    Sumérgete en las aguas de nuestras enseñanzas mientras
-                    entrenas en la playa y perfeccionas tu resistencia con el
-                    peso de la concha de tortuga.
+                    Sumérgete en las aguas de nuestras enseñanzas mientras entrenas en la playa y perfeccionas tu resistencia con el peso de la concha de tortuga.
                   </div>
                   <div class="flex items-center mb-4">
                     <div class="text-lg">
-                      Descubre el poder de la disciplina, la fortaleza y la
-                      camaradería!
+                      Descubre el poder de la disciplina, la fortaleza y la camaradería!
                     </div>
                   </div>
                 </div>
@@ -129,8 +117,9 @@
           </div>
 
           <!-- Second Responsive Div with Image -->
-          <div class="md:w-1/2">
+          <div class="xl:w-1/2">
             <div class="relative h-0" style="padding-bottom: 75%">
+              <div class="w-full h-full bg-black z-30"></div>
               <img
                 src="../../../assets/images/fondo.jpg"
                 alt="Image description"
@@ -146,9 +135,9 @@
       class="my-8 mx-4 p-8 bg-white dark:bg-gray-800 rounded-lg shadow-md"
     >
       <div class="container mx-auto py-12">
-        <h1 class="text-4xl font-bold mb-8 text-center">Know Your Teachers</h1>
+        <h1 class="text-4xl font-bold mb-8 text-center cursor-pointer" routerLink="/teachers">Conoce a los profesores</h1>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-8">
           <!-- Teacher Card -->
           <div
             *ngFor="let teacher of showedTeachers"
@@ -177,15 +166,15 @@
         <p
           class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl"
         >
-          Got a technical issue? Want to send feedback about a beta feature?
-          Need details about our Business plan? Let us know.
+          ¿Has tenido algun problema? ¿Quieres mandarnos un email consultando periodos de matriculación?
+          Para cualquier consulta contacta con nosotros 
         </p>
         <form action="#" class="space-y-8">
           <div>
             <label
               for="email"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Your email</label
+                >Tu Email</label
             >
             <input
               type="email"
@@ -199,13 +188,13 @@
             <label
               for="subject"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Subject</label
+              >Asunto</label
             >
             <input
               type="text"
               id="subject"
               class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-              placeholder="Let us know how we can help you"
+              placeholder="Haznos saber en qué podemos ayudarte"
               required
             />
           </div>
@@ -213,13 +202,13 @@
             <label
               for="message"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
-              >Your message</label
+              >Mensaje</label
             >
             <textarea
               id="message"
               rows="6"
               class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-              placeholder="Leave a comment..."
+              placeholder="Déjanos un comentario..."
             ></textarea>
           </div>
           <button
