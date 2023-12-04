@@ -1,24 +1,48 @@
 <div class="p-2 dark:bg-gray-800 dark:text-gray-300 mt-28">
-  <div *ngFor="let item of teachers; let i = index" class="mx-10 border-b py-5 rounded-sm p-2 dark:hover:bg-gray-700 hover:bg-gray-100">
+  <div
+    *ngFor="let item of teachers; let i = index"
+    class="mx-10 border-b py-5 rounded-sm p-2 dark:hover:bg-gray-700 hover:bg-gray-100"
+  >
     <h2 class="text-2xl ml-3 rockSalt">{{ item.name }}</h2>
-    <div class="m-3 block">
-      <div class="bg mr-2 lg:w-44 lg:h-44 h-20 border  w-20 border-black float-left relative rounded-full">
-        <div class="w-8 md:w-20 absolute rounded-full right-1 md:right-2 bottom-1 z-20">
+    <div class="inline-block con">
+      <div
+        class="bg mr-2 w-44 h-44 border border-black lg:float-left my-2 relative rounded-full align-middle flex"
+      >
+        <div class="w-20 absolute rounded-full right-3 bottom-2 z-20">
           <img [src]="item.index" alt="" class="" />
         </div>
-        <div class="bg-teal-50 z-10 md:top-3.5 md:right-3.5 top-1.5 right-1.5 w-16 h-16  lg:w-36 lg:h-36 lg:border-4 border border-black rounded-full overflow-hidden absolute">
+        <div
+          class="bg-teal-50 z-10 top-3.5 right-3.5 w-36 h-36 border-4 border-black rounded-full absolute overflow-hidden"
+        >
           <img [src]="item.img" class="" />
         </div>
       </div>
-      <div class="block">
-        <p class="mx-2"><b>Description: </b>{{ item.description }}</p>
-        <p class="mx-2"><b>Teaching Style: </b>{{ item.style }}</p>
-        <p class="mx-2"><b>Ability: </b>{{ item.abilities }}</p>
-        <p class="mx-2"><b>Teaching Classes:</b>{{ item.classes }}</p>
+      <div
+        class="block overflow-hidden lg:h-full"
+        [ngClass]="{
+          'h-52': item.isSmallHeight,
+          'h-full': !item.isSmallHeight
+        }"
+      >
+        <p class="mx-2"><b>Descripción: </b>{{ item.description }}</p>
+        <p class="mx-2"><b>Estilo de Enseñanza: </b>{{ item.style }}</p>
+        <p class="mx-2"><b>Habilidades: </b>{{ item.abilities }}</p>
+        <p class="mx-2"><b>Clases impartidas:</b>{{ item.classes }}</p>
       </div>
     </div>
-    <button [routerLink]="['/matriculate/teacherId=' + item.id]" class="m-4 text-blue-500 underline dark:text-blue-300">
-      Choose him
-    </button>
+    <div class="content-between lg:ml-44 row-auto">
+      <button
+        (click)="toggleHeight(item.id)"
+        class="m-4 text-blue-500 underline dark:text-blue-300 float-right relative lg:hidden"
+      >
+        View more
+      </button>
+      <button
+        [routerLink]="['/matriculate/teacherId=' + item.id]"
+        class="m-4 text-blue-500 underline dark:text-blue-300"
+      >
+        Choose him
+      </button>
+    </div>
   </div>
 </div>

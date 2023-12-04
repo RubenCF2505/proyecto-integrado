@@ -11,7 +11,6 @@ import * as CITIES from 'poblaciones.json';
 import * as DISTRICTS from 'provincias.json';
 import { DataList } from 'src/app/data-list';
 import { Validadores } from 'src/app/validadores';
-import { List } from '../../mock-students';
 import { TEACHERS } from '../teachers/mock-teachers';
 import { ServicesService } from 'src/app/services.service';
 @Component({
@@ -28,7 +27,6 @@ export class FormComponent {
   CITIES = JSON.parse(JSON.stringify(CITIES)).default;
   provincias: DataList[] = [];
   ciudades: DataList[] = [];
-  students = List;
   data: any;
   constructor(
     private route: ActivatedRoute,

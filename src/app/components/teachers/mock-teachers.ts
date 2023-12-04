@@ -10,7 +10,8 @@ export const TEACHERS: Teacher[] = [
         index: "assets/images/bola.png",
         img: "assets/images/goku.png",
         style: "El estilo de enseñanza de Goku se caracteriza por su enfoque práctico y práctico. A menudo cree que la mejor manera de aprender es a través de la experiencia, y anima a sus estudiantes a enfrentar desafíos de frente. Prefiere liderar con el ejemplo, mostrando a sus estudiantes lo que es posible mediante el trabajo duro, la determinación y un fuerte sentido de la justicia.",
-        abilities: "Goku es uno de los artistas marciales más poderosos en el universo Dragon Ball. Imparte su vasto conocimiento de técnicas de combate, como el Kamehameha y diversas transformaciones como Super Saiyan, a sus estudiantes. Su entrenamiento de combate es intenso y se centra en perfeccionar sus habilidades físicas."
+        abilities: "Goku es uno de los artistas marciales más poderosos en el universo Dragon Ball. Imparte su vasto conocimiento de técnicas de combate, como el Kamehameha y diversas transformaciones como Super Saiyan, a sus estudiantes. Su entrenamiento de combate es intenso y se centra en perfeccionar sus habilidades físicas.",
+        isSmallHeight:false
     },
     {
         id: 2,
@@ -20,7 +21,8 @@ export const TEACHERS: Teacher[] = [
         index: "assets/images/bola.png",
         img: "assets/images/vegeta.png",
         style: "El estilo de enseñanza de Vegeta se caracteriza por su enfoque estricto, disciplinado y sin rodeos. Tiene una fuerte creencia en empujar a sus estudiantes a sus límites, exigiendo mejora constante y perfección en sus técnicas. Es un mentor duro y exigente.",
-        abilities: "Vegeta es uno de los Saiyans y artistas marciales más poderosos en el universo Dragon Ball. Imparte su conocimiento de técnicas de combate, estrategias y transformaciones Saiyan a sus estudiantes. Su entrenamiento se centra en desarrollar poder crudo, resistencia e instintos de combate."
+        abilities: "Vegeta es uno de los Saiyans y artistas marciales más poderosos en el universo Dragon Ball. Imparte su conocimiento de técnicas de combate, estrategias y transformaciones Saiyan a sus estudiantes. Su entrenamiento se centra en desarrollar poder crudo, resistencia e instintos de combate.",
+        isSmallHeight:false
     },
     {
         id: 3,
@@ -30,7 +32,8 @@ export const TEACHERS: Teacher[] = [
         index: "assets/images/bola.png",
         img: "assets/images/roshi.png",
         style: "El estilo de enseñanza de Master Roshi es poco convencional pero efectivo. Combina el entrenamiento tradicional de artes marciales con un toque de humor y extravagancia. A menudo utiliza métodos poco ortodoxos para llevar a sus estudiantes a sus límites, inculcando disciplina y perseverancia.",
-        abilities: "Master Roshi es un maestro de artes marciales legendario y es el creador del Kamehameha, una técnica poderosa de ondas de energía. Imparte su conocimiento de artes marciales, técnicas de combate y pensamiento estratégico a sus estudiantes, enseñándoles a canalizar su energía y desarrollar sus habilidades de lucha."
+        abilities: "Master Roshi es un maestro de artes marciales legendario y es el creador del Kamehameha, una técnica poderosa de ondas de energía. Imparte su conocimiento de artes marciales, técnicas de combate y pensamiento estratégico a sus estudiantes, enseñándoles a canalizar su energía y desarrollar sus habilidades de lucha.",
+        isSmallHeight:false
     },
     {
         id: 4,
@@ -40,7 +43,8 @@ export const TEACHERS: Teacher[] = [
         img: "assets/images/whis.png",
         index: "assets/images/bola.png",
         style: "Whis emplea un estilo de enseñanza único y efectivo que combina orientación, entrenamiento de artes marciales y lecciones de vida. Es un maestro estricto pero justo que enfatiza la disciplina y la perseverancia. Valora el desarrollo tanto de habilidades físicas como mentales, presionando a sus estudiantes para que alcancen su máximo potencial.",
-        abilities: "Whis es un maestro de artes marciales incomparable. Imparte su conocimiento de técnicas de combate, incluido el misterioso y poderoso Ultra Instinct, a sus estudiantes. Bajo su guía, los estudiantes aprenden a canalizar su energía, perfeccionar sus formas de lucha y desarrollar habilidades sobrehumanas."
+        abilities: "Whis es un maestro de artes marciales incomparable. Imparte su conocimiento de técnicas de combate, incluido el misterioso y poderoso Ultra Instinct, a sus estudiantes. Bajo su guía, los estudiantes aprenden a canalizar su energía, perfeccionar sus formas de lucha y desarrollar habilidades sobrehumanas.",
+        isSmallHeight:false
     },
     {
         id: 5,
@@ -50,7 +54,8 @@ export const TEACHERS: Teacher[] = [
         index: "assets/images/bola.png",
         img: "assets/images/gohan.png",
         style: "Gohan combinaría paciencia y entusiasmo, priorizando la comprensión sobre la memorización mecánica. Fomentaría la exploración profunda de conceptos y crearía un ambiente de apoyo, alentando la camaradería entre estudiantes. Siempre estaría dispuesto a responder preguntas y brindar orientación.",
-        abilities: "La inteligencia excepcional de Gohan lo haría un maestro versátil, destacándose en ciencias, literatura o artes marciales. Adaptándose a diferentes estilos de aprendizaje, aseguraría que cada estudiante comprenda el material, identificando y fomentando sus fortalezas únicas."
+        abilities: "La inteligencia excepcional de Gohan lo haría un maestro versátil, destacándose en ciencias, literatura o artes marciales. Adaptándose a diferentes estilos de aprendizaje, aseguraría que cada estudiante comprenda el material, identificando y fomentando sus fortalezas únicas.",
+        isSmallHeight:false
     },
     {
         id: 6,
@@ -60,7 +65,8 @@ export const TEACHERS: Teacher[] = [
         index: "assets/images/bola.png",
         img: "assets/images/piccolo.png",
         style: "El estilo de enseñanza de Piccolo se caracteriza por su disciplina e intensidad. Es un mentor severo pero justo, exigiendo el máximo esfuerzo y dedicación de sus estudiantes. Cree en un entrenamiento riguroso y empuja a sus pupilos a alcanzar su máximo potencial.",
-        abilities: "Piccolo es un formidable artista marcial y estratega. Imparte su conocimiento de técnicas de combate, como el Cañón Especial y la Onda Demoníaca, a sus estudiantes. Su entrenamiento enfatiza la precisión, el poder y el pensamiento estratégico en la batalla."
+        abilities: "Piccolo es un formidable artista marcial y estratega. Imparte su conocimiento de técnicas de combate, como el Cañón Especial y la Onda Demoníaca, a sus estudiantes. Su entrenamiento enfatiza la precisión, el poder y el pensamiento estratégico en la batalla.",
+        isSmallHeight:false
     }
 
 ];
