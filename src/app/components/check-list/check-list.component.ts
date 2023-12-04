@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
 import { ServicesService } from 'src/app/services.service';
 import { TEACHERS } from '../teachers/mock-teachers';
-import { AbstractControl, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-check-list',
@@ -31,10 +36,11 @@ export class CheckListComponent {
   savedStudents: any[] = [];
   keys: string[] = [];
   showedStudents: string[] = [];
-  selectedValues: boolean[] = [];
+  selected: string[] = [];
+
   form: FormGroup = this.formBuilder.group({});
   ngOnInit() {
-    this.service.checkValue(this.form);
+    this.checkValue();
   }
 
   find(item: number) {
@@ -52,8 +58,30 @@ export class CheckListComponent {
     });
     return sortedObject;
   }
+  checkValue() {
+    const trueValues: string[] = [];
+    // Loop through each control in the form group
+    Object.keys(this.form.controls).forEach((key) => {
+      const control: AbstractControl | null = this.form.get(key);
 
-  
+      // Check if the control exists and its value is true
+      if (control && control.value === true) {
+        trueValues.push(key);
+      }
+    });
+    return trueValues;
+  }
+  deleteItems() {
+    const itemIdsToDelete =this.checkValue()
+    const modifiedItemIds = itemIdsToDelete.map(id => id.slice(0, -1));
+    // Convert string IDs to numbers if your backend expects numeric IDs
+
+    this.service.deleteData({ itemIds: modifiedItemIds }).subscribe(
+      (response) => {
+        console.log('Items deleted successfully', response);
+      }
+    );
+  }
 
   reset() {
     this.showedStudents = this.savedStudents;

@@ -32,21 +32,7 @@ export class ServicesService {
       this.items.push({ label: 'Teacher Access', id: 'login' });
     }
   }
-  checkValue(form: FormGroup) {
-    const trueValues: string[] = [];
-
-    // Loop through each control in the form group
-    Object.keys(form.controls).forEach((key) => {
-      const control: AbstractControl | null = form.get(key);
-
-      // Check if the control exists and its value is true
-      if (control && control.value === true) {
-        trueValues.push(key);
-      }
-    });
-
-    this.trueValues = trueValues;
-  }
+ 
 
   getTeacherById(id: number): Observable<string> {
     const url = `/matriculate/${id}`;
@@ -78,10 +64,8 @@ export class ServicesService {
       });
   }
 
-  deleteData() {
-    this.http.post(`${this.apiUrl}delete.php`, this.trueValues).subscribe((response) => {
-      console.log(response);
-    });
+  deleteData(values: any) {
+    return this.http.post(`${this.apiUrl}delete.php`, values)
   }
   saveFormData(formData: any): Observable<any> {
     this.students.push(formData);
