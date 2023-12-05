@@ -6,3 +6,6 @@
     background-position: center ;
     display: flex;
 }
+.height{
+    height: calc(100vh - 116px);
+  }
