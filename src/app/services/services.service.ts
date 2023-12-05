@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { BehaviorSubject, Observable, filter } from 'rxjs';
-import { TEACHERS } from './components/teachers/mock-teachers';
+import { TEACHERS } from '../components/teachers/mock-teachers';
 import { AbstractControl, FormGroup } from '@angular/forms';
 
 @Injectable({

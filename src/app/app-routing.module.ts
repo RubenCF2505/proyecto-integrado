@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthServiceService } from './auth-service.service';
+import { AuthServiceService } from './services/auth-service.service';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { CheckListComponent } from './components/check-list/check-list.component';
 import { ContainerComponent } from './components/container/container.component';

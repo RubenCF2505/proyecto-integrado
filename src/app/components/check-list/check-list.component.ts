@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ServicesService } from 'src/app/services.service';
+import { ServicesService } from 'src/app/services/services.service';
 import { TEACHERS } from '../teachers/mock-teachers';
 import {
   AbstractControl,
