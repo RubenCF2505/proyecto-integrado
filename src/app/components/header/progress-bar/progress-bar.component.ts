@@ -1,12 +1,11 @@
 import {
   Component,
-  OnInit,
-  Output,
   EventEmitter,
-  ViewChild
+  OnInit,
+  Output
 } from "@angular/core";
 import { fromEvent } from "rxjs";
-import { map, share, tap } from "rxjs/operators";
+import { map, tap } from "rxjs/operators";
 
 @Component({
   selector: "app-progress-bar",
