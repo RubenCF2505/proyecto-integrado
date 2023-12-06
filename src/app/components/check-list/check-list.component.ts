@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
-import { ServicesService } from 'src/app/services/services.service';
+import { ServicesService } from 'src/app/services.service';
 import { TEACHERS } from '../teachers/mock-teachers';
-import {
-  AbstractControl,
-  FormBuilder,
-  FormControl,
-  FormGroup,
-} from '@angular/forms';
-
+import { Student } from 'src/app/student';
 @Component({
   selector: 'app-check-list',
   templateUrl: './check-list.component.html',
@@ -15,40 +9,40 @@ import {
 })
 export class CheckListComponent {
   teachers = TEACHERS;
-  constructor(
-    public service: ServicesService,
-    private formBuilder: FormBuilder
-  ) {
-    this.service.getStudents().subscribe((data: any) => {
-      this.service.students = data;
-      this.keys = Object.keys(data[0]);
-      this.keys.push('');
-
-      data.forEach((element: any) => {
-        //element es lo que hay que pasar a array
-        this.savedStudents.push(Object.values(element));
-        this.form.addControl(element.DNI, new FormControl(false));
-      });
-    });
-    this.showedStudents = this.savedStudents;
-  }
+  constructor(private service: ServicesService) {}
   selectedItemId: number | null = null; // Initialize as null or any default value
   savedStudents: any[] = [];
   keys: string[] = [];
-  showedStudents: string[] = [];
-  selected: string[] = [];
-
-  form: FormGroup = this.formBuilder.group({});
+  showedStudents:string[]=[]
   ngOnInit() {
-    this.checkValue();
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.service.getStudents().subscribe((data: any) => {
+      this.service.students = data;
+      this.keys = Object.keys(data[0]);
+      this.keys.push("")
+
+      data.forEach((element:any)=>{
+ //element es lo que hay que pasar a array
+        this.savedStudents.push(Object.values(element))
+      
+      })
+    });
+    this.showedStudents=this.savedStudents
   }
 
+
+
+  // Ordenar
+
+  // Listar con el nuevo order
+
+  // Call the function to get the sorted array
   find(item: number) {
-    this.showedStudents = this.savedStudents.filter((arr) =>
-      arr[14].includes(item)
-    );
+    
+    this.showedStudents = this.savedStudents.filter(arr => arr[14].includes(item));
+    
   }
-
   sortObject(inputObject: any, order: string[]): any {
     const sortedObject: any = {};
     order.forEach((key) => {
@@ -58,40 +52,12 @@ export class CheckListComponent {
     });
     return sortedObject;
   }
-  checkValue() {
-    const trueValues: string[] = [];
-    // Loop through each control in the form group
-    Object.keys(this.form.controls).forEach((key) => {
-      const control: AbstractControl | null = this.form.get(key);
-
-      // Check if the control exists and its value is true
-      if (control && control.value === true) {
-        trueValues.push(key);
-      }
-    });
-    return trueValues;
-  }
-  deleteItems() {
-    const itemIdsToDelete =this.checkValue()
-    const modifiedItemIds = itemIdsToDelete.map(id => id.slice(0, -1));
-    // Convert string IDs to numbers if your backend expects numeric IDs
-
-    this.service.deleteData({ itemIds: modifiedItemIds }).subscribe(
-      (response) => {
-        console.log('Items deleted successfully', response);
-      }
-    );
-  }
-
-  reset() {
-    this.showedStudents = this.savedStudents;
-  }
-
+  // Function to handle item click
   handleItemClick(itemId: number) {
-    this.find(itemId);
-    this.selectedItemId = itemId;
+    this.find(itemId)
+    this.selectedItemId = itemId; // Set the selected item ID when clicked
   }
-
+  
   onLogout() {
     this.service.logout();
   }

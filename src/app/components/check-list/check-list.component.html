@@ -1,24 +1,13 @@
 <div class="flex altura mt-28">
-  <as-split direction="horizontal" gutterSize="10" class="flex-1">
-    <as-split-area
-      [size]="15"
-      order="1"
-      class="sm:max-w-sm sm:min-w-min min-w-min max-w-min"
-    >
-      <nav
-        class="col-span-4 md:col-span-2 py-40 border-r-2 h-full border-gray-600 bg-gray-600 flex items-center"
-      >
+  <as-split direction="horizontal" gutterSize="10" class="flex-1 ">
+    <as-split-area [size]="15" order="1" class="sm:max-w-sm sm:min-w-min min-w-min max-w-min">
+      <nav class="col-span-4 md:col-span-2 py-40 border-r-2 h-full border-gray-600 bg-gray-600 flex items-center">
         <!-- Vertical Navigation Menu -->
         <div class="flex flex-col first:border-t w-full">
-          <div
-            *ngFor="let item of teachers"
-            class="text-white border-b border-gray-200"
-          >
+          <div *ngFor="let item of teachers" class="text-white border-b border-gray-200 ">
             <div class="">
-              <button
-                class="w-full text-left p-4  {{
-                  selectedItemId === item.id ? 'bg-gray-200 text-gray-800' : ''
-                }}"
+              <button 
+                class="w-full text-left p-4  {{ selectedItemId === item.id ? 'bg-gray-200 text-gray-800' : '' }}" 
                 (click)="handleItemClick(item.id)"
               >
                 {{ item.name }}
@@ -30,49 +19,30 @@
     </as-split-area>
     <as-split-area order="2">
       <!-- Main content goes here -->
-      <div class="bg-gray-300 p-4 flex-1">
+      <div class="bg-gray-300 p-4 flex-1" >
         <div class="overflow-x-auto">
-          <form [formGroup]="form">
           <table class="w-full bg-white rounded-lg shadow-md">
             <thead>
               <tr>
                 <!-- Header Row -->
-                <th
-                  *ngFor="let header of keys"
-                  class="py-2 text-xs bg-gray-100"
-                >
+                <th *ngFor="let header of keys" class="py-2  text-xs bg-gray-100">
                   {{ header | titlecase }}
                 </th>
               </tr>
             </thead>
-            
             <tbody class="divide-y divide-gray-200">
               <!-- Data Rows -->
               <tr *ngFor="let item of showedStudents" class="hover:bg-gray-50">
+                
                 <td *ngFor="let cell of item" class="py-2 px-1 text-center">
                   {{ cell }}
                 </td>
-                <input type="checkbox" id="myCheckbox" class="form-checkbox h-5 w-5 mt-2.5 text-yellow-500" formControlName="{{item[2]}}" >
+                <td> <input type="checkbox" name="" id=""></td>
               </tr>
             </tbody>
           </table>
-        </form>
         </div>
       </div>
-      <button
-        class="bg-red-500 text-white font-bold py-2 px-4 rounded m-2 float-right"
-        (click)="deleteItems()"
-        routerLink="/checkList"
-      >
-        Delete
-      </button>
-
-      <button
-        class="bg-yellow-500 text-white font-bold py-2 px-4 rounded m-2 float-right"
-        (click)="reset()"
-      >
-        Reset
-      </button>
     </as-split-area>
   </as-split>
 </div>
