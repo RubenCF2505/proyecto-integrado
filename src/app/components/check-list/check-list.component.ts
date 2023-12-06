@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
-import { ServicesService } from 'src/app/Services/services.service';
+import { ServicesService } from 'src/app/services.service';
 import { TEACHERS } from '../teachers/mock-teachers';
-<<<<<<< Updated upstream
 import { Student } from 'src/app/student';
-=======
-
->>>>>>> Stashed changes
 @Component({
   selector: 'app-check-list',
   templateUrl: './check-list.component.html',
@@ -15,7 +11,6 @@ export class CheckListComponent {
   teachers = TEACHERS;
   constructor(private service: ServicesService) {}
   selectedItemId: number | null = null; // Initialize as null or any default value
-<<<<<<< Updated upstream
   savedStudents: any[] = [];
   keys: string[] = [];
   showedStudents:string[]=[]
@@ -57,33 +52,10 @@ export class CheckListComponent {
     });
     return sortedObject;
   }
-=======
-  students: string[];
-  keys:string[]
->>>>>>> Stashed changes
   // Function to handle item click
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    this.setStudents()
-  }
-  setStudents() {
-    this.service.getAlumnos().subscribe((data) => {
-      this.students = data;
-      console.log(this.students);
-      
-      this.keys = Object.keys(data);
-    });
-  }
-
   handleItemClick(itemId: number) {
-<<<<<<< Updated upstream
     this.find(itemId)
     this.selectedItemId = itemId; // Set the selected item ID when clicked
-=======
-    this.selectedItemId = itemId;
-    return this.selectedItemId; // Set the selected item ID when clicked
->>>>>>> Stashed changes
   }
   
   onLogout() {

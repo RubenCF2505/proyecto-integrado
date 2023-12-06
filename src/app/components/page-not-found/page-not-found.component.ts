@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router,NavigationEnd } from '@angular/router';
-import { ServicesService } from 'src/app/Services/services.service';
+import { ServicesService } from 'src/app/services.service';
 
 @Component({
   selector: 'app-page-not-found',

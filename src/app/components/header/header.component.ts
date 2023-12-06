@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
-import { ServicesService } from 'src/app/Services/services.service';
+import { ServicesService } from 'src/app/services.service';
 
 @Component({
   selector: 'app-header',
