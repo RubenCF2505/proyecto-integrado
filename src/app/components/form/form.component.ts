@@ -12,7 +12,7 @@ import * as DISTRICTS from 'provincias.json';
 import { DataList } from 'src/app/data-list';
 import { Validadores } from 'src/app/validadores';
 import { TEACHERS } from '../teachers/mock-teachers';
-import { ServicesService } from 'src/app/Services/services.service';
+import { ServicesService } from 'src/app/services.service';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',

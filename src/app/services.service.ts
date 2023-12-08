@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { BehaviorSubject, Observable, filter } from 'rxjs';
-import { TEACHERS } from '../components/teachers/mock-teachers';
+import { TEACHERS } from './components/teachers/mock-teachers';
 
 @Injectable({
   providedIn: 'root',
@@ -67,14 +67,7 @@ export class ServicesService {
     
     return this.http.post(`${this.apiUrl}add.php  `, formData);
   }
-<<<<<<< Updated upstream:src/app/services.service.ts
 
-=======
-  getAlumnos(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}search.php`);
-  }
-  
->>>>>>> Stashed changes:src/app/Services/services.service.ts
   hideHeaderOnSpecificRoute() {
     return this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
